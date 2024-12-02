@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      font-family: "Exo", system-ui, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      @apply text-white font-medium;
+    }
+
+    h1 {
+      @apply text-4xl md:text-8xl font-normal;
+    }
+
+    h2 {
+      @apply text-3xl lg:text-6xl font-normal;
+    }
+
+    h3 {
+      @apply text-xl lg:text-3xl;
+    }
+
+    h4 {
+      @apply text-lg lg:text-xl;
+    }
+
+    body {
+      @apply text-slate-300;
+    }
+  }
