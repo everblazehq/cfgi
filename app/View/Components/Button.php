@@ -8,7 +8,8 @@ use Illuminate\View\View;
 class Button extends Component
 {
     public function __construct(
-        public string $variant
+        public string $variant,
+        public bool $link = false
     ) {}
  
     public function render(): View

@@ -13,7 +13,7 @@
         </nav>
 
         <div class="flex gap-2">
-            <x-button variant="outline">Login</x-button>
+            <x-button variant="outline" :link="true">Login</x-button>
             <x-button variant="primary">Sign up</x-button>
         </div>
     </div>

@@ -11,6 +11,8 @@
     }
 @endphp
 
-<div {{ $attributes->merge(['class' => $variantClass]) }}>
-    {{ $slot }}
-</div>
+@if($link !== false)
+    <a {{ $attributes->merge(['class' => $variantClass]) }}>{{ $slot }}</a>
+@else
+    <button {{ $attributes->merge(['class' => $variantClass]) }}>{{ $slot }}</button>
+@endif
