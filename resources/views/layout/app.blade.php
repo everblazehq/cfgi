@@ -13,9 +13,15 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-        <div class="flex min-h-screen bg-slate-950">
-            @yield('body')
-        </div>
+        <main>
+            <div class="bg-slate-950">
+                <div class="container mx-auto p-4 sm:px-0 2xl:px-24">
+                    @include('layout.header')
+
+                    @yield('body')
+                </div>
+            </div>
+        </main>
 
         @stack('scripts')
         @vite('resources/css/app.js')
