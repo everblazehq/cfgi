@@ -14,7 +14,7 @@
     </head>
     <body>
         <main>
-            <div class="bg-slate-950">
+            <div class="bg-slate-950 min-h-screen">
                 <div class="container mx-auto p-4 sm:px-0 2xl:px-24">
                     @include('layout.header')
 

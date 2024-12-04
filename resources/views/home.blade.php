@@ -15,7 +15,7 @@
 
     <section id="top-exchanges">
         <div class="mt-16">
-            <h3 class="mb-4">Top exchanges</h3>
+            <h3 class="mb-4">Currencies</h3>
 
             <table class="w-full border-collapse border-spacing-0">
                 <thead>

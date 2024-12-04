@@ -1,5 +1,5 @@
 @extends('layout.app')
 
 @section('body')
-    Token page
+    {{ Str::title($coin) }} Fear &amp; Greed Index
 @endsection

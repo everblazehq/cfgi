@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/token-page', function () {
-    return view('token-page');
+Route::get('{coin}-fear-greed-index', function (string $coin) {
+    return view('token-page', ['coin' => $coin]);
 });
