@@ -12,9 +12,9 @@
             </ul>
         </nav>
 
-        <div class="flex gap-4">
-            <button class="py-2 px-4 font-semibold border border-solid border-slate-300 rounded">Login</button>
-            <button class="py-2 px-4 text-cyan-950 font-semibold border border-solid border-cyan-300 bg-cyan-300 rounded">Sign up</button>
+        <div class="flex gap-2">
+            <x-button variant="outline">Login</x-button>
+            <x-button variant="primary">Sign up</x-button>
         </div>
     </div>
 </header>
