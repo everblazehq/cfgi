@@ -20,7 +20,7 @@ export default {
                     card: "rgba(20, 20, 20, 0.7)",
                 },
                 accent: {
-                    blue: "#0066FF",
+                    blue: "#177FF0",
                     red: "#FF4B4B",
                     yellow: "#FFBA08",
                     green: "#00B746",
