@@ -14,10 +14,10 @@ export default {
             colors: {
                 background: {
                     base: "",
-                    primary: "#121212",
-                    secondary: "#1E1E1E",
-                    tertiary: "#2A2A2A",
-                    card: "rgba(20, 20, 20, 0.7)",
+                    primary: "rgba(20, 20, 20, 0.7)",
+                    secondary: "rgba(23, 23, 23, 1)",
+                    tertiary: "rgba(44, 44, 44, 0.4)",
+                    pillButton: "rgba(27, 27, 27, 1)",
                 },
                 accent: {
                     blue: "#177FF0",

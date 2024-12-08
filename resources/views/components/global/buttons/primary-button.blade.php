@@ -2,7 +2,7 @@
 
 <button
     type="{{ $type }}"
-    {{ $attributes->merge(['class' => 'bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors']) }}
+    {{ $attributes->merge(['class' => 'bg-accent-blue hover:bg-blue-700 px-6 py-2 rounded-full transition-colors']) }}
 >
     {{ $slot }}
 </button>

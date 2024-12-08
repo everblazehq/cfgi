@@ -57,10 +57,10 @@
 
     <div class="min-h-screen bg-background-primary text-text-primary p-4 md:p-8">
         <header class="mb-8">
-            <h1 class="text-2xl md:text-3xl font-semibold">{{ Str::title($coin) }}</h1>
+            <h1 class="text-2xl md:text-3xl font-semibold">{{ Str::title(getFullCoinName($coin)) }}</h1>
         </header>
 
-        <div class="space-y-8">
+        <div class="space-y-20">
             {{-- Fear & Greed Index Section --}}
             <x-token-page.fear-greed-index
                 :value="$data['fearGreedIndex']['value']"
@@ -76,7 +76,7 @@
             />
 
             {{-- Historical Chart Section --}}
-            <x-token-page.historical-chart />
+            <x-token-page.charts />
 
             {{-- Detailed Sentiment Analysis --}}
             <x-token-page.sentiment-analysis>

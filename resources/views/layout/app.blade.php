@@ -15,7 +15,7 @@
     </head>
     <body>
         <main>
-            <div class="bg-slate-950 min-h-screen">
+            <div>
                 <div class="container mx-auto p-4 sm:px-0 2xl:px-24">
                     @include('layout.header')
 
@@ -27,4 +27,29 @@
         @stack('scripts')
         @vite('resources/css/app.js')
     </body>
+    <style>
+        body {
+            position: relative; /* Ensure the body is positioned to contain the pseudo-element */
+            background-color: #000; /* Dark background for contrast */
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 700px; /* Adjust size for focus */
+            height: 700px; /* Adjust size for focus */
+            left: 50%;
+            top: -400px; /* Adjust position for focus */
+            transform: translateX(-50%);
+            background: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.6) 0%, /* Brighter center */
+            rgba(255, 255, 255, 0.1) 70%
+            );
+            filter: blur(150px); /* Adjust blur for focus */
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
 </html>

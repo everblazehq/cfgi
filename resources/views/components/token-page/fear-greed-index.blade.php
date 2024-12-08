@@ -31,7 +31,7 @@
             </div>
         @enderror
 
-        <div class="bg-background-card backdrop-blur-[30px] border border-border-light rounded-[14px] p-5 sm:p-[30px] flex flex-col items-center gap-5 sm:gap-[20px]">
+        <div class="bg-background-primary backdrop-blur-[30px] border border-border-light rounded-[14px] p-5 sm:p-[30px] flex flex-col items-center gap-5 sm:gap-[20px]">
             {{-- Header --}}
             <div class="w-full flex justify-between items-start">
                 <h2 class="font-manrope text-[36px] leading-[110%] tracking-[-0.011em] font-bold text-white">
@@ -53,7 +53,7 @@
             {{-- Bottom Controls --}}
             <div class="w-full flex flex-col sm:flex-row gap-4">
                 {{-- Token Selection --}}
-                <div class="flex-1 bg-[rgba(44,44,44,0.4)] border border-border-light rounded-[14px] p-[10px_30px]">
+                <div class="flex-1 bg-background-tertiary border border-border-light rounded-[14px] p-[10px_30px]">
                     <span class="block text-[14px] leading-[140%] tracking-[-0.011em] text-white/30 mb-2">Token</span>
                     <div class="flex items-center gap-2.5">
                         <x-icons.bitcoin />
@@ -64,13 +64,13 @@
                 </div>
 
                 {{-- Timeframe Selection --}}
-                <div class="flex-1 bg-[rgba(44,44,44,0.4)] border border-[rgba(255,255,255,0.1)] rounded-[14px] p-[10px_30px]">
+                <div class="flex-1 bg-background-tertiary border border-border-light rounded-[14px] p-[10px_30px]">
                     <span class="block text-[14px] leading-[140%] tracking-[-0.011em] text-white/30 mb-2">Temporality</span>
                     <div class="relative">
                         <select
                             x-model="selectedTimeframe"
                             @change="refreshData()"
-                            class="w-full bg-[rgba(44,44,44,0.4)] border border-none text-white font-manrope text-[32px] leading-[140%] tracking-[-0.011em] font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#177FF0] rounded-[14px] p-0"
+                            class="w-full bg-background-tertiary border border-none text-white font-manrope text-[32px] leading-[140%] tracking-[-0.011em] font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#177FF0] rounded-[14px] p-0"
                         >
                             <option value="15 min">15 min</option>
                             <option value="1 hour">1 hour</option>
@@ -88,13 +88,13 @@
 
     {{-- Coin Analysis Section --}}
     <section
-        class="relative flex-1 bg-background-card backdrop-blur-[30px] border border-border-light rounded-[14px] p-[30px]"
+        class="relative flex-1 bg-background-primary backdrop-blur-[30px] border border-border-light rounded-[14px] p-[30px]"
         role="region"
         aria-label="Bitcoin Analysis"
     >
         <div class="flex justify-between items-center mb-6">
             <h2 class="font-manrope text-[36px] leading-[110%] tracking-[-0.011em] font-bold text-white">
-                {{ $coinName}} analysis <!-- TODO: Map coin ticker to coin name -->
+                {{ getFullCoinName($coinName) }} analysis <!-- TODO: Map coin ticker to coin name -->
             </h2>
             <x-icons.arrow />
         </div>
@@ -106,7 +106,7 @@
         {{-- Price Score Grid --}}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             @foreach($priceScores as $score)
-            <div class="flex items-center justify-between bg-background-card border-2 border-border-light rounded-[14px] p-[10px_20px_10px_30px]">
+            <div class="flex items-center justify-between bg-background-primary border-2 border-border-light rounded-[14px] p-[10px_20px_10px_30px]">
                 <span class="text-white font-medium">Price Score</span>
                 <div class="relative w-12 h-12">
                     <x-price-score-svg :value="$score['value']" />

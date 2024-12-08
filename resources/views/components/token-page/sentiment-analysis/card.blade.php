@@ -5,7 +5,8 @@
         <h3 class="font-medium">{{ $title }}</h3>
         <x-global.buttons.info-button tooltip="Sentiment analysis explanation" />
     </div>
-    <x-global.progress-bar :progress="$progress" />
+    <!--progress bar goes here -->
+    {{ $progress }}
     <div class="h-48 mt-6" x-data x-init="
         new Chart($el, {
             type: 'bar',
