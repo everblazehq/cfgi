@@ -186,4 +186,104 @@ document.addEventListener("DOMContentLoaded", () => {
         labelElement.textContent = label;
         lineLabelContainer.appendChild(labelElement);
     });
+
+    // Card Bar Charts
+    const cardCanvases = document.querySelectorAll(
+        '[id^="cardBarCanvasChart"]'
+    );
+
+    cardCanvases.forEach((canvas, index) => {
+        const ctx = canvas.getContext("2d");
+
+        const newBarLabels = [
+            "13:18",
+            "14:18",
+            "15:18",
+            "16:18",
+            "17:18",
+            "18:18",
+            "19:18",
+            "20:18",
+            "21:18",
+            "22:18",
+            "23:18",
+            "24:18",
+            "00:18",
+            "01:18",
+            "02:18",
+            "03:18",
+            "04:18",
+            "05:18",
+        ];
+
+        const cardDataValues = [
+            45, 60, 75, 30, 50, 70, 85, 40, 45, 60, 75, 30, 50, 70, 85, 40, 1,
+            90,
+        ];
+
+        const backgroundColors = cardDataValues.map((value) => {
+            if (value <= 20) return "#FF004D";
+            if (value <= 40) return "#FF540B";
+            if (value <= 60) return "#FFD600";
+            if (value <= 80) return "#90FF00";
+            if (value <= 100) return "#03EBF3";
+            return "#333333";
+        });
+
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: newBarLabels,
+                datasets: [
+                    {
+                        label: `Card Dataset ${index + 1}`,
+                        data: cardDataValues,
+                        backgroundColor: backgroundColors,
+                        borderWidth: 0,
+                        borderRadius: {
+                            topLeft: 8,
+                            topRight: 8,
+                        },
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                },
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: "#333333",
+                        },
+                        ticks: {
+                            display: false,
+                        },
+                    },
+                },
+            },
+        });
+
+        // Render labels below each bar chart
+        const labelContainer = document.getElementById(
+            `cardBarChartLabels${index}`
+        );
+        labelContainer.className = "w-full flex justify-around gap-7";
+
+        newBarLabels.forEach((label) => {
+            const labelElement = document.createElement("div");
+            labelElement.className =
+                "w-full text-[#858585] text-center font-semibold border border-border-light rounded-full px-[1x] py-[2px]";
+            labelElement.textContent = label;
+            labelContainer.appendChild(labelElement);
+        });
+    });
 });

@@ -80,11 +80,13 @@
 
             {{-- Detailed Sentiment Analysis --}}
             <x-token-page.sentiment-analysis>
-                @foreach($data['sentimentAnalysis'] as $analysis)
+                @foreach($data['sentimentAnalysis'] as $index => $analysis)
                     <x-token-page.sentiment-analysis.card
                         :title="$analysis['title']"
                         :progress="$analysis['progress']"
                         :chart-data="$analysis['chartData']"
+                        :index="$index"
+                        :is-blurred="true"
                     />
                 @endforeach
             </x-token-page.sentiment-analysis>

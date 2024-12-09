@@ -21,11 +21,11 @@
                 The Bitcoin fear and greed index values range from 0% (extreme fear) to 100% (extreme greed).
             </p>
             <div class="flex flex-col space-y-2">
-                <x-global.badges.status-badge type="extreme-fear">EXTREME FEAR</x-global.badges.status-badge>
-                <x-global.badges.status-badge type="fear">FEAR</x-global.badges.status-badge>
-                <x-global.badges.status-badge type="neutral">NEUTRAL</x-global.badges.status-badge>
-                <x-global.badges.status-badge type="greed">GREED</x-global.badges.status-badge>
-                <x-global.badges.status-badge type="extreme-greed">EXTREME GREED</x-global.badges.status-badge>
+                <x-global.badges.status-badge type="extreme-fear" size="base">EXTREME FEAR</x-global.badges.status-badge>
+                <x-global.badges.status-badge type="fear" size="base">FEAR</x-global.badges.status-badge>
+                <x-global.badges.status-badge type="neutral" size="base">NEUTRAL</x-global.badges.status-badge>
+                <x-global.badges.status-badge type="greed" size="base">GREED</x-global.badges.status-badge>
+                <x-global.badges.status-badge type="extreme-greed" size="base">EXTREME GREED</x-global.badges.status-badge>
             </div>
         </div>
     </div>
