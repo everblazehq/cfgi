@@ -86,23 +86,27 @@
                         :progress="$analysis['progress']"
                         :chart-data="$analysis['chartData']"
                         :index="$index"
-                        :is-blurred="true"
+                        :is-blurred="false"
                     />
                 @endforeach
             </x-token-page.sentiment-analysis>
 
             {{-- Index Explanation Section --}}
-            <x-token-page.index-explanation :indicators="[
-                'Price Score',
-                'Volatility',
-                'Volume',
-                'Fear line',
-                'Technical',
-                'Social Media',
-                'Dominance',
-                'Search',
-                'Order Book'
-            ]" />
+            <x-token-page.index-explanation
+                :indicators="[
+                        'Price Score',
+                        'Volatility',
+                        'Volume',
+                        'Impulse',
+                        'Technical',
+                        'Social Media',
+                        'Dominance',
+                        'Search',
+                        'Whales',
+                        'Order Book'
+                    ]"
+                :coin-name="$coin"
+            />
 
             {{-- Bitcoin Analysis Text Area --}}
             <x-token-page.text-analysis />
