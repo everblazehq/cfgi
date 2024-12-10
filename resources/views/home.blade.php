@@ -2,19 +2,24 @@
 
 @section('body')
     <section id="top">
-        <div class="flex mx-auto items-center mt-16">
-            <div class="flex flex-col w-6/12">
+        <div class="flex mx-auto mt-40">
+            <div class="flex flex-col w-6/12 pt-10 pb-40">
                 <h1><strong class="font-normal text-cyan-300">Crypto</strong> Fear &amp; Greed Index</h1>
                 <h2 class="text-xl lg:text-3xl mt-4">The market sentiment indicator</h2>
             </div>
-            <div class="w-6/12">
-                <img class="relative -top-8 -right-8 -bottom-8 -left-8" src="{{ Vite::asset('resources/images/top-image.png') }}" alt="CFGI" />
+            <div class="w-6/12 relative" >
+                <img class="absolute top-[50%] -right-[10%] -left-[10%] -translate-y-1/2 max-w-[120%]" src="{{ Vite::asset('resources/images/header_image.png') }}" alt="CFGI" />
+                {{-- <img class="absolute z-40 -top-1/3 right-0" src="{{ Vite::asset('resources/images/header_image_1.png') }}" data-scroll data-scroll-speed="-1.5" />
+                <img class="absolute z-30 -top-[10%] left-0" src="{{ Vite::asset('resources/images/header_image_2.png') }}" data-scroll data-scroll-speed="2" />
+                <img class="absolute z-20 top-[50%] right-0 translate-x-10 -translate-y-1/2" src="{{ Vite::asset('resources/images/header_image_3.png') }}" />
+                <img class="absolute z-10 bottom-0 -left-[15%]" src="{{ Vite::asset('resources/images/header_image_4.png') }}" data-scroll data-scroll-speed="0.25" />
+                <img class="absolute right-0 -bottom-[30%]" src="{{ Vite::asset('resources/images/header_image_5.png') }}" data-scroll data-scroll-speed="1" /> --}}
             </div>
         </div>
     </section>
 
     <section id="top-exchanges">
-        <div class="mt-16">
+        <div class="mt-[200px]">
             <h3 class="mb-4">Currencies</h3>
 
             <table class="w-full border-collapse border-spacing-0">
@@ -297,18 +302,21 @@
         <div class="mt-16">
             <h3 class="mb-4">FAQ</h3>
 
-            <div class="p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg">
+            <div class="p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: true}" >
                 <div class="flex items-center justify-between">
                     <h4>What is CFGI?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400" @click="toggled = !toggled">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled === true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>                                                                               
+                        </svg>                                                                              
                     </div>
                 </div>
 
-                <div class="pt-6 leading-normal">
+                <div class="pt-6 leading-normal" x-show="toggled === true" x-transition>
                     <p>
                         The <strong class="text-white">Crypto Fear and Greed Index (CFGI)</strong> is a comprehensive tool for analyzing cryptocurrency sentiment. It takes into account critical market indicators to determine the level of fear or greed present, with a range of <strong class="text-white">0% to 100%</strong>. The five possible classes within this range are <strong class="text-white">Extreme Greed, Greed, Neutral, Fear, and Extreme Fear</strong>.
                     </p>
@@ -321,29 +329,39 @@
                 </div>
             </div>
 
-            <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg">
+            <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: false}">
                 <div class="flex items-center justify-between">
                     <h4>How to understand CFGI?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400" @click="toggled = !toggled">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>                                                                                                                  
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled === true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>                                                                                                            
                     </div>
                 </div>
             </div>
 
-            <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg">
+            <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: false}">
                 <div class="flex items-center justify-between">
                     <h4>Why an indicator of Fear &amp; Greed?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400" @click="toggled = !toggled">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                        </svg>                                                                                                       
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled === true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>                                                                                                
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
+@pushonce('scripts')
+    @vite('resources/js/home.js')
+@endpushonce

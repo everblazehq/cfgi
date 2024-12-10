@@ -10,11 +10,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=exo:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
 
+        @livewireStyles
         @vite('resources/css/app.css')
     </head>
     <body>
-        <main>
-            <div class="bg-slate-950 min-h-screen">
+        <main id="main">
+            <div class="bg-slate-950 min-h-screen" data-scroll-container>
                 <div class="container mx-auto p-4 sm:px-0 2xl:px-24">
                     @include('layout.header')
 
@@ -23,7 +24,8 @@
             </div>
         </main>
 
+        @livewireScripts
         @stack('scripts')
-        @vite('resources/css/app.js')
+        @vite('resources/js/app.js')
     </body>
 </html>
