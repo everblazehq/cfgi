@@ -3,18 +3,15 @@
     'coinName' => '',
     'timeframe' => '',
     'loading' => false,
-    'error' => true,
+    'error' => false,
+    'errorMessage' => '',
     'priceScores' => [],
 ])
 
-<div class="flex flex-col lg:flex-row gap-6 w-full mx-auto>
-    {{-- Fear & Greed Index Section --}}
-    <section
-        x-data="fearGreedIndex(@js($value))"
-        class="relative w-full lg:w-[528px]"
-        role="region"
-        aria-label="Fear and Greed Index"
-    >
+<section class="flex flex-col lg:flex-row gap-6 w-full mx-auto">
+{{-- Fear & Greed Index Section --}}
+
+    <div x-data="fearGreedIndex(@js($value))" class="relative w-full lg:w-[528px]" role="region" aria-label="Fear and Greed Index">
         {{-- Loading State --}}
         <!-- TODO: Test this -->
         @if($loading)
@@ -24,12 +21,11 @@
         @endif
 
         {{-- Error State --}}
-        <!-- TODO: Test this -->
-        @error('fear-greed-index')
-            <div class="bg-red-500/10 text-red-500 p-4 rounded-xl mb-4" role="alert">
-                {{ $message }}
+        @if($error)
+            <div class="absolute inset-0 bg-red-500/10 text-red-500 p-4 rounded-xl mb-4" role="alert z-10">
+                {{ $errorMessage }}
             </div>
-        @enderror
+        @endif
 
         <div class="bg-background-primary backdrop-blur-[30px] border border-border-light rounded-[14px] p-5 sm:p-[30px] flex flex-col items-center gap-5 sm:gap-[20px]">
             {{-- Header --}}
@@ -42,7 +38,7 @@
 
             {{-- Gauge Component --}}
             <div class="w-[415px] h-[415px] relative">
-                <x-token-page.gauge
+                <x-token-page.fear-greed-index.gauge
                     :value="$value"
                     :min="0"
                     :max="100"
@@ -84,10 +80,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     {{-- Coin Analysis Section --}}
-    <section
+    <div
         class="relative flex-1 bg-background-primary backdrop-blur-[30px] border border-border-light rounded-[14px] p-[30px]"
         role="region"
         aria-label="Bitcoin Analysis"
@@ -117,56 +113,6 @@
 
         {{-- Progress Bar --}}
         <x-progress-bar :progressWidth="50" :countdownText="'17 • 51'" />
-    </section>
-</div>
+    </div>
+</section>
 
-<!-- @pushOnce('scripts')
-<script>
-interface FearGreedState {
-    value: number;
-    status: string;
-    loading: boolean;
-    error: string | null;
-    selectedTimeframe: string;
-}
-
-document.addEventListener('alpine:init', () => {
-    Alpine.data('fearGreedIndex', (initialValue: number) => ({
-        value: initialValue,
-        status: '',
-        loading: false,
-        error: null,
-        selectedTimeframe: '15 min',
-
-        init() {
-            this.updateStatus();
-            this.$watch('value', () => this.updateStatus());
-        },
-
-        updateStatus() {
-            if (this.value <= 20) this.status = 'extreme-fear';
-            else if (this.value <= 40) this.status = 'fear';
-            else if (this.value <= 60) this.status = 'neutral';
-            else if (this.value <= 80) this.status = 'greed';
-            else this.status = 'extreme-greed';
-        },
-
-        async refreshData() {
-            this.loading = true;
-            this.error = null;
-
-            try {
-                const response = await fetch(`/api/fear-greed-index?timeframe=${this.selectedTimeframe}`);
-                const data = await response.json();
-                this.value = data.value;
-            } catch (error) {
-                this.error = 'Failed to update Fear & Greed Index';
-                console.error(error);
-            } finally {
-                this.loading = false;
-            }
-        }
-    }));
-});
-</script>
-@endPushOnce -->

@@ -141,17 +141,3 @@
     </svg>
 </div>
 
-<!-- @pushOnce('scripts')
-<script>
-document.addEventListener('alpine:init', () => {
-    Alpine.data('gauge', (value, min, max) => ({
-        value: value,
-        min: min,
-        max: max,
-        initGauge() {
-            // Additional initialization if needed
-        }
-    }))
-})
-</script>
-@endPushOnce -->

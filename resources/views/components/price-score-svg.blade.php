@@ -8,14 +8,12 @@
     $dashOffset = 125.6 * (1 - $value / 100);    // Determine the color based on the value
     // TODO: This should use the custom tailwind colors
     $colorClass = match(true) {
-        $value <= 0 => '#212121', // Edge case for 0
-        $value <= 20 => '#FF004D', // Red
-        $value <= 40 => '#FF540B', // Orange
-        $value <= 60 => '#FFD600', // Yellow
-        $value <= 80 => '#90FF00', // Green
+        ($value > 0 && $value < 20) => '#FF004D', // Red
+        $value < 40 => '#FF540B', // Orange
+        $value < 60 => '#FFD600', // Yellow
+        $value < 80 => '#90FF00', // Green
         $value <= 100 => '#03EBF3', // Blue
-        $value > 100 => '#212121', // Edge case for > 100
-        default => '#212121'  // Edge case for no value
+        default => '#212121'  // Edge case for no matching value
     };
 
 @endphp

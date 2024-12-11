@@ -1,8 +1,6 @@
 @props(['data' => null])
 
 <section
-    x-data="historicalChart()"
-    x-init="initChart($refs.canvas)"
     class="flex flex-col gap-20"
 >
     <x-chart-section

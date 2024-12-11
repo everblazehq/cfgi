@@ -76,7 +76,7 @@
             />
 
             {{-- Historical Chart Section --}}
-            <x-token-page.charts />
+            <x-token-page.charts.index />
 
             {{-- Detailed Sentiment Analysis --}}
             <x-token-page.sentiment-analysis>
@@ -92,7 +92,7 @@
             </x-token-page.sentiment-analysis>
 
             {{-- Index Explanation Section --}}
-            <x-token-page.index-explanation
+            <x-token-page.explanation
                 :indicators="[
                         'Price Score',
                         'Volatility',
