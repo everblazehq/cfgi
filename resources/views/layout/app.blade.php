@@ -11,11 +11,12 @@
         <link href="https://fonts.bunny.net/css?family=exo:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
 
+        @livewireStyles
         @vite('resources/css/app.css')
     </head>
     <body>
-        <main>
-            <div>
+        <main id="main">
+            <div data-scroll-container>
                 <div class="container mx-auto p-4 sm:px-0 2xl:px-24">
                     @include('layout.header')
 
@@ -24,8 +25,9 @@
             </div>
         </main>
 
+        @livewireScripts
         @stack('scripts')
-        @vite('resources/css/app.js')
+        @vite('resources/js/app.js')
     </body>
     <style>
         body {
