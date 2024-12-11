@@ -109,16 +109,7 @@
             />
 
             {{-- Bitcoin Analysis Text Area --}}
-            <x-token-page.text-analysis />
-
-            {{-- Share Section --}}
-            <x-token-page.social-share :platforms="[
-                ['name' => 'twitter', 'label' => 'TWITTER'],
-                ['name' => 'facebook', 'label' => 'FACEBOOK'],
-                ['name' => 'telegram', 'label' => 'TELEGRAM'],
-                ['name' => 'whatsapp', 'label' => 'WHATSAPP'],
-                ['name' => 'link', 'label' => 'COPY LINK'],
-            ]" />
+            <x-token-page.embed :coin-name="$coin" />
 
             {{-- Add to Smartphone Section --}}
             <x-token-page.smartphone-instructions />
@@ -134,4 +125,5 @@
         </div>
     </div>
 @endsection
+
 

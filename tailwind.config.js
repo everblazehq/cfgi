@@ -39,6 +39,7 @@ export default {
                 },
                 border: {
                     light: "rgba(255, 255, 255, 0.1)",
+                    toggle: "rgba(50, 50, 50, 1)",
                 },
             },
             backdropBlur: {

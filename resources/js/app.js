@@ -3,6 +3,7 @@ import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
 import.meta.glob(["../images/**"]);
+import "./prism";
 
 function createChart(ctx, chartType, labels, datasets, options = {}) {
     return new Chart(ctx, {
