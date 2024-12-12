@@ -78,7 +78,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/ethereum-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('ethereum-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -104,7 +104,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/bnb-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('bnb-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -130,7 +130,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/solana-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('solana-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -156,7 +156,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/ripple-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('ripple-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -182,7 +182,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/doge-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('doge-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -208,7 +208,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/cardano-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('cardano-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -234,7 +234,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/shibainu-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('shibainu-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -260,7 +260,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/avalanche-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('avalanche-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -286,7 +286,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/tron-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('tron-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
