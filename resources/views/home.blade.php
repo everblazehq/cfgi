@@ -52,7 +52,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/bitcoin-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('bitcoin-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
