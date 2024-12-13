@@ -3,7 +3,7 @@
 <section
     class="flex flex-col gap-20"
 >
-    <x-chart-section
+    <x-token-page.charts.chart-section
         title="Historical"
         primaryButtonText="SETUP FIRST ALERT"
         secondaryButtonText="PERIOD"
@@ -13,7 +13,7 @@
         chartType="bar"
     />
 
-    <x-chart-section
+    <x-token-page.charts.chart-section
         title="Price"
         secondaryButtonText="NOW"
         secondaryButtonText2="100,000.00$"

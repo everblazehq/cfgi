@@ -55,9 +55,9 @@
         ];
     @endphp
 
-    <div class="min-h-screen bg-background-primary text-text-primary p-4 md:p-8">
+    <div class="min-h-screen bg-background-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
         <header class="mb-8">
-            <h1 class="text-2xl md:text-3xl font-semibold">{{ Str::title(getFullCoinName($coin)) }}</h1>
+            <h1 class="text-h1 font-bold">{{ Str::title(getFullCoinName($coin)) }}</h1>
         </header>
 
         <div class="space-y-20">
@@ -112,16 +112,16 @@
             <x-token-page.embed :coin-name="$coin" />
 
             {{-- Add to Smartphone Section --}}
-            <x-token-page.smartphone-instructions />
+            <x-token-page.pwa />
 
             {{-- Footer Image --}}
-            <div class="mt-8 relative">
+            <!-- <div class="mt-8 relative">
                 <img
                     src="/path-to-your-image.png"
                     alt="App Preview"
                     class="w-full rounded-xl shadow-lg"
                 />
-            </div>
+            </div> -->
         </div>
     </div>
 @endsection

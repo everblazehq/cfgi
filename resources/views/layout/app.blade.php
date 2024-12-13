@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>CFGI</title>
 
@@ -31,24 +31,25 @@
     </body>
     <style>
         body {
-            position: relative; /* Ensure the body is positioned to contain the pseudo-element */
-            background-color: #000; /* Dark background for contrast */
+            position: relative;
+            background-color: #000;
         }
 
         body::before {
             content: '';
             position: absolute;
-            width: 700px; /* Adjust size for focus */
-            height: 700px; /* Adjust size for focus */
+            width: 100%;
+            max-width: 700px;
+            height: 700px;
             left: 50%;
-            top: -400px; /* Adjust position for focus */
+            top: -400px;
             transform: translateX(-50%);
             background: radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.6) 0%, /* Brighter center */
-            rgba(255, 255, 255, 0.1) 70%
+                circle,
+                rgba(255, 255, 255, 0.6) 0%,
+                rgba(255, 255, 255, 0.1) 70%
             );
-            filter: blur(150px); /* Adjust blur for focus */
+            filter: blur(150px);
             box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
             z-index: -1;
             pointer-events: none;

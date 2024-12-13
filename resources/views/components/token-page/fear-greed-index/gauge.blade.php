@@ -3,9 +3,9 @@
 <div
     x-data="gauge({{ $value }}, {{ $min }}, {{ $max }})"
     x-init="initGauge()"
-    class="relative"
+    class="relative w-full h-full"
 >
-    <svg width="416" height="415" viewBox="0 0 416 415" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 416 415" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
         <g clip-path="url(#clip0_12028_19359)">
             <path d="M208 414.613C322.386 414.613 415.114 321.885 415.114 207.499C415.114 93.1137 322.386 0.385742 208 0.385742C93.6146 0.385742 0.886719 93.1137 0.886719 207.499C0.886719 321.885 93.6146 414.613 208 414.613Z" fill="#131313" stroke="#262626" stroke-width="0.772898" stroke-miterlimit="10"/>
             <path d="M208.001 388.694C308.072 388.694 389.195 307.57 389.195 207.499C389.195 107.428 308.072 26.3047 208.001 26.3047C107.93 26.3047 26.8066 107.428 26.8066 207.499C26.8066 307.57 107.93 388.694 208.001 388.694Z" fill="#1D1D1D"/>

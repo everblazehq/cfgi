@@ -1,25 +1,26 @@
 @props(['title', 'progress', 'chartData', 'index', 'isBlurred' => false])
-<div class="flex flex-col bg-background-primary border border-border-light rounded-xl p-7 gap-10">
+<div class="flex flex-col bg-background-primary border border-border-light rounded-xl p-7 gap-10 w-full">
     <div class="flex flex-col gap-5">
         <div class="flex justify-between items-center">
             <h3 class="font-medium">{{ $title }}</h3>
             <x-icons.info tooltip="Sentiment analysis explanation" />
         </div>
         <!--progress bar goes here -->
-        <x-progress-bar
-            :progressWidth=$progress
-            :rounded="50"
-        />
+        <div class="w-full">
+            <x-token-page.sentiment-analysis.progress-bar-card
+                :value=$progress
+            />
+        </div>
         <div class="flex justify-center">
             <x-global.badges.status-badge type="fear" size="sm">36% DOWNTREND MARKET</x-global.badges.status-badge>
         </div>
     </div>
     <div class="flex flex-col gap-5 relative">
         <div class="{{ $isBlurred ? 'blurred' : '' }}">
-            <div class="w-full min-h-[225px] bg-[#1E1E1E] rounded-xl pt-3">
+            <div class="w-full overflow-hidden bg-[#1E1E1E] rounded-xl pt-3">
                 <canvas id="cardBarCanvasChart{{ $index }}"></canvas>
             </div>
-            <div id="cardBarChartLabels{{ $index }}" />
+            <div id="cardBarChartLabels{{ $index }}">
                 <!-- Labels will be inserted here -->
             </div>
         </div>
@@ -60,6 +61,15 @@
 
 .overlay * {
     pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+    .w-full {
+        width: 100%;
+    }
+    .h-full {
+        height: auto;
+    }
 }
 </style>
 @vite('resources/js/app.js')

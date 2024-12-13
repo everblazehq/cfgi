@@ -4,32 +4,38 @@
     format: 'dark',
     darkCode: '',
     lightCode: ''
-}" class="flex flex-col space-between gap-[30px] font-manrope bg-background-primary border border-border-light rounded-[32px] p-[30px]">
-    <div class="flex flex-col gap-[6px]">
-        <h2 class="text-[40px] font-bold mb-[10px]">{{ getFullCoinName($coinName) }} Analysis</h2>
+}" class="flex flex-col space-between gap-[1.875rem] font-manrope bg-background-primary border border-border-light rounded-[32px] p-[30px]">
+    <div class="flex flex-col gap-[0.375rem]">
+        <h2 class="text-h2 font-bold mb-[10px]">{{ getFullCoinName($coinName) }} Analysis</h2>
         <span class="text-white text-base font-medium">Embed the code on your website with current selected temporality and autoupdated.</span>
     </div>
-    <div class="relative w-fit bg-background-pillButton border border-border-light rounded-[110px] p-[10px]">
+    <div class="relative w-fit bg-background-pillButton border border-border-light rounded-[110px] p-[5px] sm:p-[10px] md:p-[10px]">
         <!-- Sliding background -->
         <div
-            class="absolute transition-all duration-200 bg-accent-blue rounded-[69px] h-[calc(100%-20px)] w-[calc(50%-10px)]"
-            :class="format === 'dark' ? 'left-[10px]' : 'left-[calc(50%+5px)]'"
+            class="absolute transition-all duration-200 bg-accent-blue rounded-[69px] h-[calc(100%-10px)] sm:h-[calc(100%-20px)] w-[calc(50%-5px)] sm:w-[calc(50%-10px)]"
+            :class="format === 'dark' ? 'left-[5px] sm:left-[10px]' : 'left-[calc(50%+2.5px)] sm:left-[calc(50%+5px)]'"
         ></div>
 
         <!-- Buttons -->
         <button
             @click="format = 'dark'"
-            class="relative text-white text-xl font-semibold py-[20px] px-[30px] rounded-[69px] transition-colors"
+            class="relative text-white text-xs font-semibold py-[10px] px-[15px] rounded-[69px] transition-colors
+                   sm:text-lg sm:py-[15px] sm:px-[25px]
+                   md:text-xl md:py-[20px] md:px-[30px]"
             :class="format === 'dark' ? 'text-white' : 'text-text-secondary hover:text-white'"
         >
-            Dark Format
+            <span class="sm:hidden">Dark</span>
+            <span class="hidden sm:inline">Dark Format</span>
         </button>
         <button
             @click="format = 'light'"
-            class="relative text-white text-xl font-semibold py-[20px] px-[30px] rounded-[69px] transition-colors"
+            class="relative text-white text-xs font-semibold py-[10px] px-[15px] rounded-[69px] transition-colors
+                   sm:text-lg sm:py-[15px] sm:px-[25px]
+                   md:text-xl md:py-[20px] md:px-[30px]"
             :class="format === 'light' ? 'text-white' : 'text-text-secondary hover:text-white'"
         >
-            Light Format
+            <span class="sm:hidden">Light</span>
+            <span class="hidden sm:inline">Light Format</span>
         </button>
     </div>
 
@@ -89,7 +95,9 @@
                     }, 2000);
                 })
         "
-        class="w-fit flex items-center gap-[10px] test-white text-xl font-semibold bg-accent-blue rounded-[69px] p-[20px_30px]"
+        class="w-fit flex items-center gap-[0.625rem] text-white text-xs font-semibold bg-accent-blue rounded-[69px] p-[10px_15px]
+               sm:text-lg sm:py-[15px] sm:px-[25px]
+               md:text-xl md:py-[20px] md:px-[30px]"
     >
         <x-icons.copy />
         Copy Embed

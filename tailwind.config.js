@@ -7,10 +7,17 @@ export default {
     ],
     theme: {
         fontFamily: {
-            sans: ['"Exo"', "system-ui", "sans-serif"],
-            manrope: ["Manrope", "sans-serif"],
+            sans: ["Manrope", "system-ui", "sans-serif"],
         },
         extend: {
+            fontFamily: {
+                exo: ['"Exo"', "system-ui", "sans-serif"],
+            },
+            fontSize: {
+                h1: ["clamp(2.5rem, 5vw, 4rem)", { lineHeight: "1.1" }],
+                h2: ["clamp(1.875rem, 3.5vw, 2.5rem)", { lineHeight: "1.2" }],
+                h3: ["clamp(1.5rem, 3vw, 2.25rem)", { lineHeight: "1.2" }],
+            },
             colors: {
                 background: {
                     base: "",
