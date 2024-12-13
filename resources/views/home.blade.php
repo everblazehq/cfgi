@@ -52,7 +52,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/bitcoin-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('bitcoin-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -78,7 +78,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/ethereum-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('ethereum-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -104,7 +104,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/bnb-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('bnb-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -130,7 +130,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/solana-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('solana-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -156,7 +156,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/ripple-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('ripple-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -182,7 +182,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/doge-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('doge-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -208,7 +208,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/cardano-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('cardano-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -234,7 +234,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/shibainu-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('shibainu-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -260,7 +260,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/avalanche-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('avalanche-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -286,7 +286,7 @@
                             $1,337.00
                         </td>
                         <td class="p-4 border-t border-solid border-slate-800 text-right">
-                            <a href="/tron-fear-greed-index" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                            <a href="{{ url('tron-fear-greed-index') }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>                                          
@@ -303,10 +303,10 @@
             <h3 class="mb-4">FAQ</h3>
 
             <div class="p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: true}" >
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
                     <h4>What is CFGI?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400" @click="toggled = !toggled">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
@@ -330,10 +330,10 @@
             </div>
 
             <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: false}">
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
                     <h4>How to understand CFGI?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400" @click="toggled = !toggled">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
@@ -342,13 +342,23 @@
                         </svg>                                                                                                            
                     </div>
                 </div>
+
+                <div class="pt-6 leading-normal" x-show="toggled === true" x-transition>
+                    <p>The indicator operates on a simple principle: values <strong class="text-white">above 50</ indicate a positive market sentiment ranging from Neutral to <strong class="text-white">Extreme Greed</strong>. On the other hand, values <strong class="text-white">below 50</strong> imply a negative market sentiment ranging from Neutral to <strong class="text-white">Extreme Fear</strong>. The stronger the sentiment, the greater its potential impact on the current price.</p>
+
+                    <p class="mt-4">Investing in the crypto market using <strong class="text-white">CFGI</strong> involves some effective strategies to consider. For a <strong class="text-white">long-term investment</strong> approach, it's advisable to look for extreme feelings to buy and sell. Extreme Fear signals a good opportunity to enter the market, while <strong class="text-white">Extreme Greed</strong> times present an excellent opportunity to exit.</p>
+
+                    <p class="mt-4">For <strong class="text-white">day trading</strong> or scalping, following a shorter timeframe and focusing on a strong recent feeling of greed is possible. However, it's essential to follow the previous strategy while ensuring <strong class="text-white">proper risk control</strong>.</p>
+
+                    <p class="mt-4">The beta version of CFGI includes the <strong class="text-white">top 40 strongest cryptocurrencies</strong> on the market, reducing the risk of investing in tokens that are too speculative or prone to fraud. If we receive positive feedback, more tokens will be added to the product.</p>
+                </div>
             </div>
 
             <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: false}">
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
                     <h4>Why an indicator of Fear &amp; Greed?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400" @click="toggled = !toggled">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
@@ -356,6 +366,12 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg>                                                                                                
                     </div>
+                </div>
+
+                <div class="pt-6 leading-normal" x-show="toggled === true" x-transition>
+                    <p>For those investing in cryptocurrency, our aim is to find <strong class="text-white">buying and selling opportunities</strong> that maximize profits while minimizing risks. One way to do this is to focus on markets with <strong class="text-white">low long-term risks</strong>. The cryptocurrency market has demonstrated a positive trend over time and is expected to continue for years to come, making it an enticing choice.<p>
+
+                    <p class="mt-4">The <strong class="text-white">CFGI</strong> takes into account human psychology and can help identify patterns of <strong class="text-white">irrational behavior</strong> that repeat throughout market cycles. Since market movements are heavily influenced by these emotional impulses, measuring and quantifying them can provide insight into the <strong class="text-white">market's psychology</strong> and lead to profitable investment decisions.</p>
                 </div>
             </div>
         </div>
