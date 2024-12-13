@@ -1,3 +1,4 @@
-import "./bootstrap";
-import.meta.glob(["../images/**"]);
-import "./fgCharts";
+import './bootstrap';
+import.meta.glob([
+    '../images/**',
+]);
