@@ -300,7 +300,7 @@
 
     <section id="faq">
         <div class="mt-16">
-            <h3 class="mb-4">FAQ</h3>
+            <h3 class="mb-4">FAQ</h3> 
 
             <div class="p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: true}" >
                 <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
