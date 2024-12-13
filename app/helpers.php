@@ -46,6 +46,6 @@ if (!function_exists('getFullCoinName')) {
             // Add more mappings as needed
         ];
 
-        return $coinMap[$ticker] ?? 'Unknown Coin';
+        return $coinMap[$ticker] ?? Str::title($ticker);
     }
 }

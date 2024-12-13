@@ -57,7 +57,7 @@
 
     <div class="min-h-screen bg-background-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
         <header class="mb-8">
-            <h1 class="text-h1 font-bold">{{ Str::title(getFullCoinName($coin)) }}</h1>
+            <h1 class="text-h1 font-bold">{{ getFullCoinName($coin) }}</h1>
         </header>
 
         <div class="space-y-20">
