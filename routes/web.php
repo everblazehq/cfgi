@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Livewire::setScriptRoute(function ($handle) {
+    return Route::get('/cfgi/livewire/livewire.js', $handle);
+});
+
 Route::get('/', function () {
     return view('home');
 });
