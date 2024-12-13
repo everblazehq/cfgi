@@ -1,6 +1,6 @@
 <header>
     <div class="flex items-center justify-between p-4 bg-slate-500/25 rounded">
-        <a href="/" class="block">
+        <a href="{{ url('/') }}" class="block">
             <svg width="148" height="50" viewBox="0 0 148 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_12494_3956)">
                 <path d="M24 1C10.7452 1 0 11.7454 0 24.9996C0 38.2538 10.7452 49 24 49C37.2548 49 48 38.2546 48 24.9996C48 11.7446 37.2548 1 24 1ZM24 45.9969C12.4042 45.9969 3.0038 36.5964 3.0038 24.9996C3.0038 13.4029 12.4042 4.00307 24 4.00307C35.5958 4.00307 44.9962 13.4036 44.9962 24.9996C44.9962 36.5956 35.5958 45.9969 24 45.9969Z" fill="white"/>
