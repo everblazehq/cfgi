@@ -44,15 +44,15 @@
                                 @default
                             @endswitch
                         @else
-                            <div class="grid min-h-[40px] w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
-                                <svg class="text-cyan-300 animate-spin" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            <div class="grid min-h-[40px] overflow-x-scroll rounded-lg lg:overflow-visible">
+                                <svg class="stroke-cyan-300 animate-spin" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24">
                                 <path
                                     d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.420>
-                                    stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
                                 <path
                                     d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.996>
-                                    stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-900">
+                                    stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300">
                                 </path>
                                 </svg>
                             </div>    
