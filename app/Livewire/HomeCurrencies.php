@@ -17,7 +17,7 @@ class HomeCurrencies extends Component
             'bitcoin' => ['ticker' => 'BTC', 'name' => 'Bitcoin'],
             'ethereum' => ['ticker' => 'ETH', 'name' => 'Ethereum'],
             'ripple' => ['ticker' => 'XRP', 'name' => 'Ripple'],
-            'doge' => ['ticker' => 'DOGE', 'name' => 'Ethereum'],
+            'doge' => ['ticker' => 'DOGE', 'name' => 'Doge'],
             'cardano' => ['ticker' => 'ADA', 'name' => 'Cardano'],
             'tron' => ['ticker' => 'TRX', 'name' => 'Tron'],
             'avalanche-2' => ['ticker' => 'AVAX', 'name' => 'Avalanche'],
