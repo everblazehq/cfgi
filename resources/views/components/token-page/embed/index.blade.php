@@ -4,12 +4,12 @@
     format: 'dark',
     darkCode: '',
     lightCode: ''
-}" class="flex flex-col space-between gap-[1.875rem] font-manrope bg-background-primary border border-border-light rounded-[32px] p-[30px]">
+}" class="flex flex-col space-between gap-[1.875rem] font-manrope bg-bg-primary border border-border-light rounded-[32px] p-[30px]">
     <div class="flex flex-col gap-[0.375rem]">
-        <h2 class="text-h2 font-bold mb-[10px]">{{ getFullCoinName($coinName) }} Analysis</h2>
+        <h2 class="text-h2-large font-bold mb-[10px]">{{ getFullCoinName($coinName) }} Analysis</h2>
         <span class="text-white text-base font-medium">Embed the code on your website with current selected temporality and autoupdated.</span>
     </div>
-    <div class="relative w-fit bg-background-pillButton border border-border-light rounded-[110px] p-[5px] sm:p-[10px] md:p-[10px]">
+    <div class="relative w-fit bg-bg-accent border border-border-light rounded-[110px] p-[5px] sm:p-[10px] md:p-[10px]">
         <!-- Sliding background -->
         <div
             class="absolute transition-all duration-200 bg-accent-blue rounded-[69px] h-[calc(100%-10px)] sm:h-[calc(100%-20px)] w-[calc(50%-5px)] sm:w-[calc(50%-10px)]"
@@ -39,9 +39,9 @@
         </button>
     </div>
 
-        <pre x-ref="codeBlock" class="relative bg-background-pillButton [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-border-light [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/25">
+        <pre x-ref="codeBlock" class="relative bg-bg-accent [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-border-light [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/25">
             <code
-                class="language-html bg-background-pillButton"
+                class="language-html bg-bg-accent"
                 x-text="format === 'dark' ? darkCode : lightCode"
                 x-init="() => {
                     // Define the code templates with escaped HTML characters and markup delimiter

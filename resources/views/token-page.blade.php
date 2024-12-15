@@ -55,7 +55,7 @@
         ];
     @endphp
 
-    <div class="min-h-screen bg-background-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
+    <div class="min-h-screen bg-bg-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
         <header class="mb-8">
             <h1 class="text-h1 font-bold">{{ getFullCoinName($coin) }}</h1>
         </header>
@@ -113,15 +113,6 @@
 
             {{-- Add to Smartphone Section --}}
             <x-token-page.pwa />
-
-            {{-- Footer Image --}}
-            <!-- <div class="mt-8 relative">
-                <img
-                    src="/path-to-your-image.png"
-                    alt="App Preview"
-                    class="w-full rounded-xl shadow-lg"
-                />
-            </div> -->
         </div>
     </div>
 @endsection

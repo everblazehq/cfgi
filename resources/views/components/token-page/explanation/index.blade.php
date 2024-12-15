@@ -6,15 +6,15 @@
         indicators: {{ json_encode($indicators) }},
         activeIndex: 0
     }"
-    class="bg-background-primary border border-border-light rounded-[32px] p-7 space-y-7"
+    class="bg-bg-primary border border-border-light rounded-[32px] p-7 space-y-7"
 >
-    <h2 class="text-h2 font-manrope font-bold">{{ getFullCoinName($coinName) }} Fear and Greed Index Indicator Explained</h2>
+    <h2 class="text-h2-large font-manrope font-bold">{{ getFullCoinName($coinName) }} Fear and Greed Index Indicator Explained</h2>
     <div class="flex gap-7">
         <!-- Left sidebar with indicators -->
-        <div class="w-fit md:w-[213px] flex flex-col bg-background-secondary border border-[#323232] rounded-[1.25rem] p-[10px] relative">
+        <div class="w-fit md:w-[213px] flex flex-col bg-bg-secondary border border-[#323232] rounded-[1.25rem] p-[10px] relative">
             <template x-for="(indicator, index) in indicators" :key="indicator">
                 <button
-                    class="relative z-10 indicator-button w-full text-left text-sm md:text-[1.25rem] font-manrope px-3 py-2 md:px-[30px] md:py-[20px] rounded-[0.625rem]"
+                    class="relative z-10 indicator-button w-full text-left text-sm md:text-xl font-manrope px-3 py-2 md:px-[30px] md:py-[20px] rounded-[0.625rem]"
                     :class="activeIndicator === indicator ? 'bg-accent-blue text-white font-semibold transition-all duration-700 ease-in-out' : 'text-white/60 font-medium hover:text-white/80'"
                     @click="activeIndicator = indicator; activeIndex = index"
                     x-text="indicator">
