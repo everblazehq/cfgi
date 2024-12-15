@@ -80,7 +80,6 @@ class HomeCurrencies extends Component
     public function getScores()
     {
         foreach ($this->currencies as $currency => $currencyDetails) {
-            sleep(1);
             $this->currencies[$currency]['cfgi'] = $this->getCFGI($this->currencies[$currency]['ticker'], 1, 4);
         }
     }
