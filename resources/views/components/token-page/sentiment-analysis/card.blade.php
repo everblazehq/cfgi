@@ -1,5 +1,5 @@
 @props(['title', 'progress', 'chartData', 'index', 'isBlurred' => false])
-<div class="flex flex-col bg-background-primary border border-border-light rounded-xl p-7 gap-10 w-full">
+<div class="flex flex-col bg-bg-primary border border-border-light rounded-xl p-7 gap-10 w-full">
     <div class="flex flex-col gap-5">
         <div class="flex justify-between items-center">
             <h3 class="font-medium">{{ $title }}</h3>
