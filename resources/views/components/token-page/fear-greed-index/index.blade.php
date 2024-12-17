@@ -1,6 +1,6 @@
 @props([
-    'value' => 0,
-    'coinName' => '',
+    'cfgData' => [],
+    'coin' => '',
     'timeframe' => '',
     'loading' => false,
     'error' => false,
@@ -9,9 +9,13 @@
 ])
 
 <section class="flex flex-col lg:flex-row gap-6 w-full mx-auto">
+<!-- <h1>Token Page</h1>
+    <p>Coin: {{ $coin }}</p>
+    <pre>CFGI Data: {{ isset($cfgData) ? json_encode($cfgData, JSON_PRETTY_PRINT) : 'No data available' }}</pre>
+</div> -->
 {{-- Fear & Greed Index Section --}}
 
-    <div x-data="fearGreedIndex(@js($value))" class="relative w-full lg:w-[33rem]" role="region" aria-label="Fear and Greed Index">
+    <div x-data="fearGreedIndex(@js($cfgData))" class="relative w-full lg:w-[33rem]" role="region" aria-label="Fear and Greed Index">
         {{-- Loading State --}}
         <!-- TODO: Test this -->
         @if($loading)
@@ -41,7 +45,7 @@
             {{-- Gauge Component --}}
             <div class="w-full max-w-[25.9375rem] aspect-square relative mx-auto">
                 <x-token-page.fear-greed-index.gauge
-                    :value="$value"
+                    :value="(int)($cfgData['0']['cfgi'] ?? 0)"
                     :min="0"
                     :max="100"
                     class="w-full h-full"
@@ -56,7 +60,7 @@
                     <div class="flex items-center gap-2.5">
                         <x-icons.bitcoin />
                         <span class="font-manrope text-[2rem] leading-[140%] tracking-[-0.011em] font-bold">
-                            {{ $coinName }} <!-- TODO: Map coin ticker to coin name -->
+                            {{ $coin }}
                         </span>
                     </div>
                 </div>
@@ -75,7 +79,7 @@
     >
         <div class="flex justify-between items-center mb-6">
             <h2 class="font-manrope text-h2-medium leading-[110%] tracking-[-0.011em] font-bold text-white">
-                {{ getFullCoinName($coinName) }} analysis
+                {{ getFullCoinName($coin) }} analysis
             </h2>
             <button>
                 <x-icons.arrow />
@@ -88,13 +92,15 @@
 
         {{-- Price Score Grid --}}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-            @foreach($priceScores as $score)
-            <div class="flex items-center justify-between bg-bg-primary border-2 border-border-light rounded-[14px] p-[10px_20px_10px_30px]">
-                <span class="text-white font-medium">Price Score</span>
-                <div class="relative w-12 h-12">
-                    <x-token-page.fear-greed-index.price-score-svg :value="$score['value']" />
+            @foreach($cfgData['0'] as $key => $score)
+                @if($key !== 'date')
+                <div class="flex items-center justify-between bg-bg-primary border-2 border-border-light rounded-[14px] p-[10px_20px_10px_30px]">
+                    <span class="text-white font-medium">{{ ucfirst($key) }}</span>
+                    <div class="relative w-12 h-12">
+                        <x-token-page.fear-greed-index.price-score-svg :value="$score ?? 0" />
+                    </div>
                 </div>
-            </div>
+                @endif
             @endforeach
         </div>
 

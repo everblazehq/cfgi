@@ -3,11 +3,6 @@
 @section('body')
     @php
         $data = [
-            'coin' => '$coin',
-            'fearGreedIndex' => [
-                'value' => 75.00,
-                'timestamp' => now()->toIso8601String()
-            ],
             'sandboxAlerts' => [
                 'configured' => 0,
                 'remaining' => 100
@@ -55,16 +50,28 @@
         ];
     @endphp
 
+    @php
+        if (!isset($cfgData)) {
+            echo "cfgData is not set.";
+        } elseif (!isset($cfgData['0']['cfgi'])) {
+            echo "cfgData['0']['cfgi'] is not set.";
+        }
+    @endphp
+
     <div class="min-h-screen bg-bg-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
         <header class="mb-8">
             <h1 class="text-h1 font-bold">{{ getFullCoinName($coin) }}</h1>
         </header>
 
-        <div class="space-y-20">
+        <div>
+
+<!-- TODO: Edge case for when CFGI data is not available && show loading state
+TODO: Edge case for when coin is not found && show error state
+        <div class="space-y-20"> -->
             {{-- Fear & Greed Index Section --}}
             <x-token-page.fear-greed-index
-                :value="$data['fearGreedIndex']['value']"
-                :coin-name="$coin"
+                :cfgData="$cfgData"
+                :coin="$coin"
                 timeframe="15 min"
                 :price-scores="$data['priceScores']"
             />
@@ -116,5 +123,6 @@
         </div>
     </div>
 @endsection
+
 
 
