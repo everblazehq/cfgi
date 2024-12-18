@@ -33,4 +33,9 @@
     body {
       @apply text-slate-300;
     }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
   }

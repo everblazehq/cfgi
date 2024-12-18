@@ -1,9 +1,9 @@
-<section class="flex flex-col-reverse lg:flex-row font-manrope bg-background-secondary rounded-xl p-6 gap-8 lg:gap-0">
-    <div class="lg:w-[65%] relative flex flex-col gap-6">
-        <h2 class="text-h2 font-bold mb-6">Add it to your smartphone</h2>
+<section class="relative flex flex-col-reverse lg:flex-row font-manrope">
+    <div class="flex flex-col bg-bg-primary border border-border-light rounded-[2rem] p-[1.875rem] gap-6">
+        <h2 class="text-h2-large font-bold mb-6">Add it to your smartphone</h2>
 
         <!-- Android Instructions -->
-        <div class="text-white text-[1.25rem] font-normal mb-8">
+        <div class="text-white text-xl font-normal mb-8 lg:mr-[35rem]">
             <div class="flex items-center gap-2 mb-4">
                 <x-icons.android class="text-accent-blue" />
                 <h3 class="font-medium">Android - Google Chrome</h3>
@@ -17,7 +17,7 @@
         </div>
 
         <!-- iOS Instructions -->
-        <div class="text-white text-[1.25rem] font-normal">
+        <div class="text-white text-xl font-normal lg:mr-[35rem]">
             <div class="flex items-center gap-2 mb-4">
                 <x-icons.apple class="text-accent-blue" />
                 <h3 class="font-medium">iOS - Safari</h3>
@@ -32,7 +32,10 @@
 
         <!-- Smartphone Display -->
     </div>
-    <div class="lg:absolute w-[500px] lg:bottom-[48px] lg:right-0 flex justify-center items-center mt-8">
-        <x-token-page.pwa.install class="absolute bottom-0 right-0 transform" style="width: 150%; height: auto;" />
+    <div class="flex lg:absolute lg:w-[700px] lg:bottom-0 lg:right-[-3.4rem] justify-center items-center mt-8">
+        <x-token-page.pwa.install
+            class="absolute bottom-0 right-0 transform"
+            style="width: 150%; height: auto;"
+        />
     </div>
 </section>
