@@ -15,8 +15,10 @@
         @vite('resources/css/app.css')
     </head>
     <body>
+        @stack('top-image')
+
         <main id="main">
-            <div data-scroll-container>
+            <div>
                 <div class="container mx-auto p-4 sm:px-0 2xl:px-24">
                     @include('layout.header')
 
@@ -32,7 +34,7 @@
     <style>
         body {
             position: relative;
-            background-color: #000;
+            background-color: #111111;
         }
 
         body::before {

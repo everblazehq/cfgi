@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@push('top-image')
+    <img class="absolute top-0 right-0 left-0 object-cover" src="{{ Vite::asset('resources/images/bg_cfgi.jpg') }}" />
+@endpush
+
 @section('body')
     <section id="top">
         <div class="flex mx-auto mt-40">
@@ -9,11 +13,6 @@
             </div>
             <div class="w-6/12 relative" >
                 <img class="absolute top-[50%] -right-[10%] -left-[10%] -translate-y-1/2 max-w-[120%]" src="{{ Vite::asset('resources/images/header_image.png') }}" alt="CFGI" />
-                {{-- <img class="absolute z-40 -top-1/3 right-0" src="{{ Vite::asset('resources/images/header_image_1.png') }}" data-scroll data-scroll-speed="-1.5" />
-                <img class="absolute z-30 -top-[10%] left-0" src="{{ Vite::asset('resources/images/header_image_2.png') }}" data-scroll data-scroll-speed="2" />
-                <img class="absolute z-20 top-[50%] right-0 translate-x-10 -translate-y-1/2" src="{{ Vite::asset('resources/images/header_image_3.png') }}" />
-                <img class="absolute z-10 bottom-0 -left-[15%]" src="{{ Vite::asset('resources/images/header_image_4.png') }}" data-scroll data-scroll-speed="0.25" />
-                <img class="absolute right-0 -bottom-[30%]" src="{{ Vite::asset('resources/images/header_image_5.png') }}" data-scroll data-scroll-speed="1" /> --}}
             </div>
         </div>
     </section>
