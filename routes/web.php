@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Livewire\TestPage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('{coin}-fear-greed-index', function (string $coin) {
     return view('token-page', ['coin' => $coin]);
 });
+
+Route::get('test-page', TestPage::class);
