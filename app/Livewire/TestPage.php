@@ -3,9 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use Livewire\Attributes\Layout;
 
-#[Layout('layout.app')]
 class TestPage extends Component
 {
     public $counter = 1;
@@ -17,6 +15,8 @@ class TestPage extends Component
 
     public function render()
     {
-        return view('livewire.test-page');
+        return view('livewire.test-page')
+            ->extends('layout.app')
+            ->section('body');
     }
 }

@@ -18,19 +18,19 @@
         </div>
     </section>
 
-    
+
 
     <section id="top-exchanges">
         <div class="mt-[200px]">
             <h3 class="mb-4">Currencies</h3>
 
-            <livewire:home-currencies /> 
+            <livewire:home-currencies />
         </div>
     </section>
 
     <section id="faq">
         <div class="mt-16">
-            <h3 class="mb-4">FAQ</h3> 
+            <h3 class="mb-4">FAQ</h3>
 
             <div class="p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: true}" >
                 <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
@@ -42,7 +42,7 @@
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled === true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>                                                                              
+                        </svg>
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled === true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>                                                                                                            
+                        </svg>
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled === true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>                                                                                                
+                        </svg>
                     </div>
                 </div>
 
