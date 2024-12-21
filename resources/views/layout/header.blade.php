@@ -1,5 +1,5 @@
 <header>
-    <div class="flex items-center justify-between p-4 bg-slate-500/25 rounded">
+    <div class="flex items-center justify-between p-4 bg-zinc-950/20 rounded">
         <a href="{{ url('/') }}" class="block">
             <svg width="148" height="50" viewBox="0 0 148 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_12494_3956)">
