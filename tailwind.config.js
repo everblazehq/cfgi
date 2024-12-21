@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 export default {
     content: [
         "./resources/**/*.blade.php",
@@ -25,6 +27,7 @@ export default {
                 ],
             },
             colors: {
+                zinc: colors.zinc,
                 bg: {
                     primary: "rgba(20, 20, 20, 0.7)", // Original: #141414/70
                     secondary: "rgba(23, 23, 23, 1)", // Original: #171717
@@ -57,6 +60,9 @@ export default {
             backdropBlur: {
                 custom: "15px",
             },
+            zIndex: {
+                '9999': '9999',
+            }
         },
     },
     plugins: [],
