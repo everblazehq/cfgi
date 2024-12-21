@@ -17,8 +17,6 @@
         </div>
     </section>
 
-    
-
     <section id="top-exchanges">
         <div class="mt-[200px]">
             <h3 class="mb-4">Currencies</h3>
@@ -31,11 +29,11 @@
         <div class="mt-16">
             <h3 class="mb-4">FAQ</h3> 
 
-            <div class="p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: true}" >
+            <div class="p-4 bg-zinc-900 border border-solid border-zinc-800 rounded-lg" x-data="{toggled: true}" >
                 <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
                     <h4>What is CFGI?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-zinc-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
@@ -58,11 +56,11 @@
                 </div>
             </div>
 
-            <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: false}">
+            <div class="mt-4 p-4 bg-zinc-900 border border-solid border-zinc-800 rounded-lg" x-data="{toggled: false}">
                 <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
                     <h4>How to understand CFGI?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-zinc-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
@@ -83,11 +81,11 @@
                 </div>
             </div>
 
-            <div class="mt-4 p-4 bg-slate-900 border border-solid border-slate-800 rounded-lg" x-data="{toggled: false}">
+            <div class="mt-4 p-4 bg-zinc-900 border border-solid border-zinc-800 rounded-lg" x-data="{toggled: false}">
                 <div class="flex items-center justify-between cursor-pointer" @click="toggled = !toggled">
                     <h4>Why an indicator of Fear &amp; Greed?</h4>
 
-                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
+                    <div class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-zinc-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" x-show="toggled !== true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
