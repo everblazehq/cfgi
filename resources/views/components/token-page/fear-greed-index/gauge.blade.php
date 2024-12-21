@@ -135,7 +135,16 @@
             <g filter="url(#filter3_b_12028_19359)">
                 <rect x="133.5" y="274" width="149" height="74" rx="14" fill="#131313" fill-opacity="0.4"/>
                 <rect x="133.951" y="274.451" width="148.098" height="73.0976" rx="13.5488" stroke="white" stroke-opacity="0.1" stroke-width="0.902409"/>
-                <text x="208" y="320" fill="white" font-size="24" text-anchor="middle">{{ number_format($value, 2) }}</text>
+                <foreignObject x="133.5" y="274" width="149" height="74">
+                    <div xmlns="http://www.w3.org/1999/xhtml" class="flex justify-center items-start h-full">
+                        <span class="font-manrope font-bold text-[4rem] leading-[5.464rem] tracking-[-0.04em]">
+                            {{ floor($value) }}
+                        </span>
+                        <span class="text-white/40 font-manrope font-bold text-[2rem] leading-[2.732rem] tracking-[-0.04em] mt-[0.2rem]">
+                            .{{ str_pad(($value - floor($value)) * 100, 2, '0', STR_PAD_LEFT) }}
+                        </span>
+                    </div>
+                </foreignObject>
             </g>
         </g>
     </svg>
