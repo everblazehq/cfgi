@@ -11,16 +11,14 @@
             @endif
 
             @if(!empty($secondaryButtonText))
-                <x-global.buttons.secondary-button @click="{{ $secondaryButtonAction }}">
+                <x-global.buttons.secondary-button @click="console.log('click')">
                     {{ $secondaryButtonText }} <span class='text-[#323232] font-semibold'>&nbsp;| {{ $secondaryButtonText2 }}</span>
                 </x-global.buttons.secondary-button>
             @endif
         </div>
     </div>
     <div class="w-full bg-[#1E1E1E] rounded-xl">
-        <canvas id="{{ $chartType}}CanvasChart"></canvas>
+        {{ $slot }}
     </div>
-    <div id="{{ $chartType }}ChartLabels" />
-        <!-- Labels will be inserted here -->
-    </div>
+
 </div>

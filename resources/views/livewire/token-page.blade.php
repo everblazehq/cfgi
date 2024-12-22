@@ -1,101 +1,92 @@
-@extends('layout.app')
-
-@section('body')
-    @php
-        $data = [
-            'sandboxAlerts' => [
-                'configured' => 0,
-                'remaining' => 100
-            ],
-            'priceScores' => [
-                [
-                    'value' => 0,
-                ],
-                [
-                    'value' => 10,
-                ],
-                [
-                    'value' => 20,
-                ],
-                [
-                    'value' => 30,
-                ],
-                [
-                    'value' => 40,
-                ],
-                [
-                    'value' => 60,
-                ],
-                [
-                    'value' => 80,
-                ],
-                [
-                    'value' => 100,
-                ],
-            ],
-            'coinAnalysis' => [
-                'totalScore' => 17,
-                'maxScore' => 51
-            ],
-            'sentimentAnalysis' => array_map(function() {
-                return [
-                    'title' => 'Price Score sentiment',
-                    'progress' => rand(30, 80),
-                    'chartData' => [
-                        'labels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                        'values' => array_map(fn() => rand(1, 20), range(1, 6))
-                    ]
-                ];
-            }, range(1, 8))
-        ];
-    @endphp
-
-    @php
-        if (!isset($cfgData)) {
-            echo "cfgData is not set.";
-        } elseif (!isset($cfgData['0']['cfgi'])) {
-            echo "cfgData['0']['cfgi'] is not set.";
-        }
-    @endphp
-
-    <div class="min-h-screen bg-bg-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
-        <header class="mb-8">
-            <h1 class="text-h1 font-bold">{{ getFullCoinName($coin) }}</h1>
-        </header>
-
+<div class="min-h-screen bg-bg-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
+    <header class="mb-8">
+        <h1 class="text-h1 font-bold">{{ getFullCoinName($coin) }}</h1>
+    </header>
+    period: {{ $period }} <br />
+    @if(!empty($cfgData) && isset($cfgData[0]['cfgi']))
+        {{ $cfgData[0]['cfgi'] }}
+        {{ json_encode($cfgData, JSON_PRETTY_PRINT) }}
+    @endif
+    {{ $count }}
+    <div>
+        @if(!is_null($timeRemaining))
+            <span id="countdownDisplay">{{ gmdate('i:s', $timeRemaining) }}</span>
+        @else
+            <span id="countdownDisplay">00:00</span> <!-- Default or loading state -->
+        @endif
+    </div>
+    <!-- resources/views/livewire/parent-component.blade.php -->
+<div >
+    <span id="countdownDisplay">{{ gmdate('i:s', $timeRemaining) }}</span>
+    <div>Countdown: {{ number_format($countdownPercentage, 2) }}%</div>
+</div>
+    <div>
+        <!-- Button to fetch next data point -->
+        @if($useTestData)
+        <button wire:click.prevent="fetchNextDataPoint" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+            Test Button Click
+        </button>
+        @endif
+        @if($useTestData)
         <div>
+            period: {{ $period }} <br />
+            @if(!empty($cfgData) && isset($cfgData[0]['cfgi']))
+                {{ $cfgData[0]['cfgi'] }}
+                <pre>{{ json_encode($cfgData, JSON_PRETTY_PRINT) }}</pre>
+            @endif
+            {{ $count }}
+        </div>
+        @endif
 
-<!-- TODO: Edge case for when CFGI data is not available && show loading state
-TODO: Edge case for when coin is not found && show error state
-        <div class="space-y-20"> -->
+    <!-- TODO: Edge case for when CFGI data is not available && show loading state
+        <!-- TODO: Edge case for when coin is not found && show error state -->
+        <div class="space-y-20">
             {{-- Fear & Greed Index Section --}}
+            <div>
             <x-token-page.fear-greed-index
                 :cfgData="$cfgData"
                 :coin="$coin"
-                timeframe="15 min"
-                :price-scores="$data['priceScores']"
+                wire:model="period"
+                :countdownPercentage="$countdownPercentage"
+                :timeRemaining="$timeRemaining"
             />
-
+</div>
             {{-- Sandbox Alerts Section --}}
             <x-token-page.sandbox-alerts
-                :configured-alerts="$data['sandboxAlerts']['configured']"
-                :remaining-alerts="$data['sandboxAlerts']['remaining']"
+                :configured-alerts="0"
+                :remaining-alerts="100"
             />
 
             {{-- Historical Chart Section --}}
-            <x-token-page.charts.index />
+            <x-token-page.charts.index :data="$cfgData" />
 
             {{-- Detailed Sentiment Analysis --}}
             <x-token-page.sentiment-analysis>
-                @foreach($data['sentimentAnalysis'] as $index => $analysis)
-                    <x-token-page.sentiment-analysis.card
-                        :title="$analysis['title']"
-                        :progress="$analysis['progress']"
-                        :chart-data="$analysis['chartData']"
-                        :index="$index"
-                        :is-blurred="false"
-                    />
-                @endforeach
+                @if(!empty($cfgData) && isset($cfgData[0]))
+                    @foreach($cfgData[0] as $key => $score)
+                        @if(!in_array($key, ['date', 'cfgi', 'time']))
+                            @php
+                                $scoreTimeData = collect($cfgData)->map(function($item) use ($key) {
+                                    return [
+                                        'score' => $item[$key],
+                                        'time' => $item['time'],
+                                    ];
+                                })->all();
+                            @endphp
+
+                            <x-token-page.sentiment-analysis.card
+                                title="{{ $key }} sentiment"
+                                :progress="$countdownPercentage"
+                                :scoreTimeData="$scoreTimeData"
+                                :index="$key"
+                                :isBlurred="false"
+                                :wire:key="$key"
+                            />
+                        @endif
+                    @endforeach
+                @else
+                    <div>No sentiment analysis data available.</div>
+                @endif
             </x-token-page.sentiment-analysis>
 
             {{-- Index Explanation Section --}}
@@ -122,7 +113,7 @@ TODO: Edge case for when coin is not found && show error state
             <x-token-page.pwa />
         </div>
     </div>
-@endsection
+</div>
 
 
 
