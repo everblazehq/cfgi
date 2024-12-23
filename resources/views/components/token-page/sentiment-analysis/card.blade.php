@@ -60,7 +60,8 @@
                             ],
                         ],
                     ]"
-                    :chartId="'{{ $title }}'"
+                    chartId="{{ $index }}"
+                    wire:key="$index"
                 />
             @else
                 <p>No data available for chart.</p>

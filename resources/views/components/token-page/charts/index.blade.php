@@ -1,8 +1,9 @@
-@props(['data' => null, 'period' => null, 'selectedOptions' => [], 'wireModel' => []])
+@props(['data' => null, 'period' => null, 'selectedOptions' => [], 'values' => []])
 
 <section
     class="flex flex-col gap-20"
 >
+
     <x-token-page.charts.chart-section
         title="Historical"
         primaryButtonText="SETUP FIRST ALERT"
@@ -13,8 +14,9 @@
         chartType="bar"
         :period="$period"
         :selectedOptions="$selectedOptions"
-        wire:model="values"
+        :values="$values"
     >
+
     <livewire:charts
             :chartData="[
                 'labels' => collect($data)->map(function($item) {
@@ -62,7 +64,7 @@
                 ],
             ]"
             chartId="historical-chart"
-            wire:key="{{ $period }}"
+            wire:key="historical"
             :data="$data"
         />
     </x-token-page.charts.chart-section>
@@ -118,7 +120,8 @@
                 ],
             ]"
             chartId="price-chart"
+            wire:key="price"
         />
     </x-token-page.charts.chart-section>
 </section>
-@vite('resources/js/app.js')
+{{-- @vite('resources/js/app.js') --}}

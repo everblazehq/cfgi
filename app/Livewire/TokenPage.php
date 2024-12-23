@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use App\Services\CFGIService;
 use App\Services\TestDataService;
 use App\Traits\TimeCalculations;
@@ -88,7 +89,8 @@ class TokenPage extends Component
         }
     }
 
-    public function updatedValues($value)
+    #[On('update-values')]
+    public function updatedValues($value = '')
     {
         $this->values = $value;
         // dd($this->values);
@@ -116,6 +118,11 @@ class TokenPage extends Component
         }
     }
 
+    public function updateValues($value)
+    {
+        dd($value);
+    }
+
     private function updateTimeRemaining()
     {
         $this->timeData = $this->calculateTimeRemaining($this->period, $this->testMode);
@@ -132,6 +139,7 @@ class TokenPage extends Component
     private function fetchCFGI()
     {
         $service = new CFGIService();
+        // dd($this->period);
         $data = $service->fetchCFGI($this->coin, $this->values, $this->period);
 
         if ($data) {
@@ -200,10 +208,7 @@ class TokenPage extends Component
     {
         return view('livewire.token-page')
             ->extends('layout.app')
-            ->section('body')
-            ->with('timeRemaining', $this->timeRemaining)
-            ->with('countdownPercentage', $this->countdownPercentage)
-            ->with('cfgData', $this->cfgData);
+            ->section('body');
     }
 }
 

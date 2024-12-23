@@ -13,7 +13,7 @@
             @if(!empty($secondaryButtonText))
                 <div>
                     <select
-                        wire:model.change="values"
+                        @change="$dispatch('update-values', { value: $event.target.value })"
                         wire:key="unique-key-{{ $period }}"
                         class="bg-bg-accent hover:bg-[#444] px-6 py-2 border-2 border-border-light rounded-full appearance-none focus:outline-none focus:ring-2 focus:ring-[#c9ab9970]"
                     >

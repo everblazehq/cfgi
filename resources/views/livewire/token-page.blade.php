@@ -59,7 +59,7 @@
             />
 
             {{-- Historical Chart Section --}}
-            <x-token-page.charts.index :data="$cfgData" :period="$period" :selectedOptions="$selectedOptions" wire:model="$values" />
+            <x-token-page.charts.index :data="$cfgData" :period="$period" :selectedOptions="$selectedOptions" :values="$values" />
 
             {{-- Detailed Sentiment Analysis --}}
             <x-token-page.sentiment-analysis>
