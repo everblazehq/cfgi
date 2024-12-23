@@ -1,4 +1,4 @@
-@props(['data' => null])
+@props(['data' => null, 'period' => null, 'selectedOptions' => [], 'wireModel' => []])
 
 <section
     class="flex flex-col gap-20"
@@ -11,6 +11,9 @@
         secondaryButtonAction="setTimeframe('custom')"
         canvasRef="canvas"
         chartType="bar"
+        :period="$period"
+        :selectedOptions="$selectedOptions"
+        wire:model="values"
     >
     <livewire:charts
             :chartData="[
@@ -59,6 +62,8 @@
                 ],
             ]"
             chartId="historical-chart"
+            wire:key="{{ $period }}"
+            :data="$data"
         />
     </x-token-page.charts.chart-section>
 

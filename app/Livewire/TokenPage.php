@@ -26,8 +26,33 @@ class TokenPage extends Component
     private $apiCalled = false;
     public $timeData = [];
     public $testMode;
-
-    protected $listeners = ['periodUpdated' => 'handlePeriodUpdated'];
+    public $selectedOptions;
+    public $options = [
+        1 => [
+            ['id' => 1, 'label' => '4 months', 'value' => 122],
+            ['id' => 2, 'label' => '2 months', 'value' => 61],
+            ['id' => 3, 'label' => '1 month', 'value' => 30],
+            ['id' => 4, 'label' => '7 days', 'value' => 7]
+        ],
+        2 => [
+            ['id' => 1, 'label' => '20 days', 'value' => 120],
+            ['id' => 2, 'label' => '11 days', 'value' => 66],
+            ['id' => 3, 'label' => '5 days', 'value' => 30],
+            ['id' => 4, 'label' => '1 day', 'value' => 6]
+        ],
+        3 => [
+            ['id' => 1, 'label' => '5 days', 'value' => 120],
+            ['id' => 2, 'label' => '2 days', 'value' => 48],
+            ['id' => 3, 'label' => '24 hours', 'value' => 24],
+            ['id' => 4, 'label' => '7 hour', 'value' => 7]
+        ],
+        4 => [
+            ['id' => 1, 'label' => '30 hours', 'value' => 120],
+            ['id' => 2, 'label' => '16 hours', 'value' => 64],
+            ['id' => 3, 'label' => '4 hours', 'value' => 16],
+            ['id' => 4, 'label' => '1 hour', 'value' => 4]
+        ]
+    ];
 
     public function mount($coin = 'BTC', $values = 20, $period = 1)
     {
@@ -36,26 +61,38 @@ class TokenPage extends Component
         $this->period = $period;
         $this->testMode = env('TEST_MODE', false);
 
+        $this->selectedOptions = $this->options[$this->period] ?? [];
         // Fetch data on page load
         $this->fetchNextDataPoint();
 
+
         // Update time remaining for display purposes, but not for controlling data fetch
-        $this->updateTimeRemaining();
+        // $this->updateTimeRemaining();
 
         // Clear the cache on page refresh
-        Cache::forget('last_api_call_time');
+        // Cache::forget('last_api_call_time');
     }
 
     public function updatedPeriod($value)
     {
         if (in_array($value, [1, 2, 3, 4])) {
             $this->period = $value;
+            $this->selectedOptions = $this->options[$value] ?? [];
             $this->fetchNextDataPoint();
-            $this->updateTimeRemaining();
+            // $this->updateTimeRemaining();
 
             // Clear the cache when the period changes
-            Cache::forget('last_api_call_time');
+            // Cache::forget('last_api_call_time');
+
+            // $this->dispatch('periodUpdated', $value);
         }
+    }
+
+    public function updatedValues($value)
+    {
+        $this->values = $value;
+        // dd($this->values);
+        $this->fetchNextDataPoint();
     }
 
     public function poll()

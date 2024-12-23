@@ -10,6 +10,7 @@ class Charts extends Component
     public $chartConfig = [];
     public $gradientColors = [];
     public $chartId;
+    public $data = [];
 
     public function mount($chartData = [], $chartConfig = [], $chartId = null)
     {
@@ -20,6 +21,12 @@ class Charts extends Component
             'start' => 'rgba(0, 255, 255, 0.5)',
             'end' => 'rgba(0, 255, 255, 0)',
         ];
+    }
+
+    public function updatedChartData($value)
+    {
+        // This will be called when chartData is updated
+        $this->emit('chartDataUpdated', $this->chartData);
     }
 
     public function getBackgroundColors($dataValues)

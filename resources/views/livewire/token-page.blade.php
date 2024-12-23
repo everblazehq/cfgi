@@ -3,6 +3,7 @@
         <h1 class="text-h1 font-bold">{{ getFullCoinName($coin) }}</h1>
     </header>
     period: {{ $period }} <br />
+    values: {{ $values }} <br />
     @if(!empty($cfgData) && isset($cfgData[0]['cfgi']))
         {{ $cfgData[0]['cfgi'] }}
         {{ json_encode($cfgData, JSON_PRETTY_PRINT) }}
@@ -58,7 +59,7 @@
             />
 
             {{-- Historical Chart Section --}}
-            <x-token-page.charts.index :data="$cfgData" />
+            <x-token-page.charts.index :data="$cfgData" :period="$period" :selectedOptions="$selectedOptions" wire:model="$values" />
 
             {{-- Detailed Sentiment Analysis --}}
             <x-token-page.sentiment-analysis>
