@@ -40,7 +40,77 @@
                             </td>
                             <td class="border-t border-solid border-zinc-800 p-4">
                                 <div class="flex items-center">
-
+                                    <x-direction variant="up" />
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    Fear
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    2024-05-07 12:28:02
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-t border-solid border-zinc-800 p-4 pl-0">
+                                <div class="flex items-center">
+                                    <img class="mr-2 h-4 w-4" src="https://cryptofonts.com/img/SVG/btc.svg" />
+                                    <div>
+                                        Bitcoin <small class="ml-1 text-zinc-400">BTC</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    15.min
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    CFGI
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    <x-direction variant="down" />
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    Fear
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    2024-05-07 12:28:02
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-t border-solid border-zinc-800 p-4 pl-0">
+                                <div class="flex items-center">
+                                    <img class="mr-2 h-4 w-4" src="https://cryptofonts.com/img/SVG/btc.svg" />
+                                    <div>
+                                        Bitcoin <small class="ml-1 text-zinc-400">BTC</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    15.min
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    CFGI
+                                </div>
+                            </td>
+                            <td class="border-t border-solid border-zinc-800 p-4">
+                                <div class="flex items-center">
+                                    <x-direction variant="auto" />
                                 </div>
                             </td>
                             <td class="border-t border-solid border-zinc-800 p-4">
