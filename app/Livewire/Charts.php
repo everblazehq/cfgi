@@ -13,6 +13,7 @@ class Charts extends Component
     public $backgroundColors = [];
     public $chartId;
     public $dataValues = [];
+    public $dataType = '';
 
     #[Reactive]
     public $data;
@@ -31,24 +32,63 @@ class Charts extends Component
     public function updatedChartData($value)
     {
         // This will be called when chartData is updated
-        $this->chartData = [
-            'labels' => collect($this->data)->map(function($item) {
-                return $item['time'];
-            })->all(),
-            'datasets' => [
-                [
-                    'label' => 'My First Dataset',
-                    'data' => collect($this->data)->map(function($item) {
-                        return $item['cfgi'];
-                    })->all(),
-                    'borderWidth' => 0,
-                    'borderRadius' => [
-                        'topLeft' => 8,
-                        'topRight' => 8,
+        switch ($this->dataType) {
+            case "scoreTimeData":
+                $this->chartData = [
+                    'labels' => collect($this->data)->pluck('time')->all(),
+                    'datasets' => [
+                        [
+                            'label' => 'My First Dataset',
+                            'data' => collect($this->data)->pluck('score')->all(),
+                            'borderWidth' => 0,
+                            'borderRadius' => [
+                                'topLeft' => 8,
+                                'topRight' => 8,
+                            ],
+                        ],
                     ],
-                ],
-            ],
-        ];
+                ];
+                break;
+            case "price":
+                $this->chartData = [
+                    'labels' => collect($this->data)->map(fn($item) => $item['time'])->all(),
+                    'datasets' => [
+                        [
+                            'label' => 'My First Dataset',
+                            'data' => collect($this->data)->map(fn($item) => $item['cfgi'])->all(),
+                            'borderWidth' => 2,
+                            'tension' => 0.4,
+                            'pointRadius' => 0,
+                            'fill' => true,
+                            'borderColor' => '#00FFFF',
+                        ],
+                    ],
+                ];
+                break;
+            case "historical":
+                $this->chartData = [
+                    'labels' => collect($this->data)->map(function($item) {
+                            return $item['time'];
+                        })->all(),
+                    'datasets' => [
+                        [
+                            'label' => 'My First Dataset',
+                            'data' => collect($this->data)->map(function($item) {
+                                return $item['cfgi'];
+                            })->all(),
+                            'borderWidth' => 0,
+                            'borderRadius' => [
+                                'topLeft' => 8,
+                                'topRight' => 8,
+                            ],
+                        ],
+                    ],
+                ];
+                break;
+            default:
+                $this->chartData = [];
+        }
+        
 
         $this->dispatch('updateChartCanvas');
     }

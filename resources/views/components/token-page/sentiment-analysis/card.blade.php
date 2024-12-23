@@ -19,6 +19,8 @@
         <div class="{{ $isBlurred ? 'blurred' : '' }}">
             @if(is_array($scoreTimeData) && !empty($scoreTimeData))
                 <livewire:charts
+                    :data="$scoreTimeData"
+                    dataType="scoreTimeData"
                     :chartData="[
                         'labels' => collect($scoreTimeData)->pluck('time')->all(),
                         'datasets' => [
@@ -61,7 +63,7 @@
                         ],
                     ]"
                     chartId="{{ $index }}"
-                    wire:key="$index"
+                    wire:key="{{ $index }}"
                 />
             @else
                 <p>No data available for chart.</p>

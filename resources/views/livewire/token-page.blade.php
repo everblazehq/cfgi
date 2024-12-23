@@ -74,7 +74,7 @@
                                     ];
                                 })->all();
                             @endphp
-
+                            
                             <x-token-page.sentiment-analysis.card
                                 title="{{ $key }} sentiment"
                                 :progress="$countdownPercentage"

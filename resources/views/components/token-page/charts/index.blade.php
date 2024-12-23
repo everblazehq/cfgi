@@ -18,6 +18,8 @@
     >
 
     <livewire:charts
+            :data="$data"
+            dataType="historical"
             :chartData="[
                 'labels' => collect($data)->map(function($item) {
                             return $item['time'];
@@ -64,8 +66,7 @@
                 ],
             ]"
             chartId="historical-chart"
-            wire:key="historical"
-            :data="$data"
+            wire:key="historical-chart"
         />
     </x-token-page.charts.chart-section>
 
@@ -78,6 +79,8 @@
         chartType="line"
     >
         <livewire:charts
+            :data="$data"
+            dataType="price"
             :chartData="[
                 'labels' => collect($data)->map(fn($item) => $item['time'])->all(),
                 'datasets' => [
@@ -120,7 +123,7 @@
                 ],
             ]"
             chartId="price-chart"
-            wire:key="price"
+            wire:key="price-chart"
         />
     </x-token-page.charts.chart-section>
 </section>
