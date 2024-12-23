@@ -27,6 +27,7 @@ export default {
                 ],
             },
             colors: {
+                blue: colors.blue,
                 zinc: colors.zinc,
                 bg: {
                     primary: "rgba(20, 20, 20, 0.7)", // Original: #141414/70

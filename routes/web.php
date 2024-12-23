@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/signals', function () {
+    return view('signals');
+});
+
 Route::get('/profile', function () {
     return view('profile');
+});
+
+Route::get('/signal-historical', function () {
+    return view('signal-historical');
 });
 
 Route::get('{coin}-fear-greed-index', function (string $coin) {

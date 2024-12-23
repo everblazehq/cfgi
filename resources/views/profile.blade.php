@@ -2,7 +2,7 @@
 
 @section('body')
     <section id="content" x-data="{ showModalAddress: false }">
-        <div class="mt-4 rounded-xl border border-zinc-700 bg-zinc-950/50 p-8">
+        <div class="mt-10 rounded-xl border border-zinc-700 bg-zinc-950/50 p-8">
             <div class="flex items-center justify-between">
                 <h1 class="text-3xl font-bold">Billing Address</h1>
                 <x-button variant="outline" x-on:click="showModalAddress = true">Edit address</x-button>
