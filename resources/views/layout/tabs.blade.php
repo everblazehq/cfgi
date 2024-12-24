@@ -15,12 +15,12 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-        @stack('top-image')
-
         <main id="main">
             <div>
                 <div class="container mx-auto p-4 sm:px-0 2xl:px-24">
                     @include('layout.header')
+
+                    <x-global.tabs />
 
                     @yield('body')
                 </div>

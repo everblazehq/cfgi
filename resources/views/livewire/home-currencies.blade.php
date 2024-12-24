@@ -3,25 +3,25 @@
     <table class="w-full border-collapse border-spacing-0">
         <thead>
             <tr>
-                <th class="p-4 pl-0 text-left text-slate-400">Currency</th>
-                <th class="p-4 text-left text-slate-400">CFGI</th>
-                <th class="p-4 text-left text-slate-400">Last 7 days</th>
-                <th class="p-4 text-left text-slate-400">Last Price</th>
-                <th class="p-4 text-left text-slate-400">&nbsp;</th>
+                <th class="p-4 pl-0 text-left text-zinc-400">Currency</th>
+                <th class="p-4 text-left text-zinc-400">CFGI</th>
+                <th class="p-4 text-left text-zinc-400">Last 7 days</th>
+                <th class="p-4 text-left text-zinc-400">Last Price</th>
+                <th class="p-4 text-left text-zinc-400">&nbsp;</th>
             </tr>
         </thead>
         <tbody class="text-white">
             @foreach($currencies as $currency => $currencyDetails)
                 <tr>
-                    <td class="p-4 pl-0 border-t border-solid border-slate-800">
+                    <td class="p-4 pl-0 border-t border-solid border-zinc-800">
                         <div class="flex items-center">
                             <img class="mr-2 w-4 h-4" src="https://cryptofonts.com/img/SVG/{{ Str::lower($currencyDetails['ticker']) }}.svg" />
                             <div>
-                                {{ $currencyDetails['name'] }} <small class="ml-1 text-slate-400">{{ $currencyDetails['ticker'] }}</small>
+                                {{ $currencyDetails['name'] }} <small class="ml-1 text-zinc-400">{{ $currencyDetails['ticker'] }}</small>
                             </div>
                         </div>
                     </td>
-                    <td class="p-4 border-t border-solid border-slate-800">
+                    <td class="p-4 border-t border-solid border-zinc-800">
                         @if(!empty($currencyDetails['cfgi']))
                             @switch(true)
                                 @case($currencyDetails['cfgi'] <= 20)
@@ -44,31 +44,18 @@
                                 @default
                             @endswitch
                         @else
-                            <div class="grid min-h-[40px] overflow-x-scroll rounded-lg lg:overflow-visible">
-                                <svg class="stroke-cyan-300 animate-spin" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24">
-                                <path
-                                    d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.420>
-                                    stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path
-                                    d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.996>
-                                    stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300">
-                                </path>
-                                </svg>
-                            </div>    
+                          <svg class="fill-cyan-300 animate-spin" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#5f6368"><path d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"/></svg>
                         @endif
                     </td>
-                    <td class="p-4 border-t border-solid border-slate-800">
+                    <td class="p-4 border-t border-solid border-zinc-800">
                         <img class="max-w-24" src="{{ Vite::asset('resources/images/chart.png') }}">
                     </td>
-                    <td class="p-4 border-t border-solid border-slate-800">
+                    <td class="p-4 border-t border-solid border-zinc-800">
                         {{ $currencyDetails['price'] ? Number::currency($currencyDetails['price'], in: 'USD') : '' }}
                     </td>
-                    <td class="p-4 border-t border-solid border-slate-800 text-right">
-                        <a href="{{ $currencyDetails['name'] ? url(Str::lower($currencyDetails['name']) . '-fear-greed-index') : '' }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-slate-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                            </svg>                                          
+                    <td class="p-4 border-t border-solid border-zinc-800 text-right">
+                        <a href="{{ $currencyDetails['name'] ? url(Str::lower($currencyDetails['name']) . '-fear-greed-index') : '' }}" class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-solid border-zinc-400">
+                            <svg class="w-5 -rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>                                         
                         </a>
                     </td>
                 </tr>
