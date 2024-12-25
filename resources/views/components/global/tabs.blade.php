@@ -3,7 +3,7 @@
         [
             'url' => '/signals',
             'text' => 'Signals',
-            'icon' => 'warning',
+            'icon' => 'exclamation-triangle',
         ],
         [
             'url' => '/profile',
@@ -13,7 +13,7 @@
         [
             'url' => '/signal-historical',
             'text' => 'Signal Historical',
-            'icon' => 'file',
+            'icon' => 'document-text',
         ],
         [
             'url' => '/plans',
@@ -28,12 +28,12 @@
         [
             'url' => '/api',
             'text' => 'API',
-            'icon' => 'api',
+            'icon' => 'cpu-chip',
         ],
         [
             'url' => '/affiliate',
             'text' => 'Affiliate Program',
-            'icon' => 'dollar',
+            'icon' => 'currency-dollar',
         ],
     ];
 @endphp
@@ -43,7 +43,7 @@
         @foreach($tabs as $tab)
             <li>
                 <a href="{{ $tab['url'] }}" class="flex items-center py-4 px-6 font-semibold text-lg text-zinc-400 hover:text-blue-500 hover:bg-blue-700/30 rounded-xl transition-colors" wire:current="!text-white !bg-accent-blue">
-                    <x-dynamic-component :component="'icons.' . $tab['icon']" class="mr-2 hover:stroke-blue-500" />
+                    <x-dynamic-component :component="'heroicon-o-'. $tab['icon']" class="stroke-2 w-6 h-6 mr-2 hover:stroke-blue-500" />
                     {!! $tab['text'] !!}
                 </a>
             </li>
