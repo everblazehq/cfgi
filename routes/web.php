@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\TokenPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,4 @@ Route::get('/signal-historical', function () {
     return view('signal-historical');
 });
 
-Route::get('{coin}-fear-greed-index', function (string $coin) {
-    return view('token-page', ['coin' => $coin]);
-});
+Route::get('{coin}-fear-greed-index', TokenPage::class);

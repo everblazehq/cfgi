@@ -3,6 +3,7 @@
 <div
     x-data="gauge({{ $value }}, {{ $min }}, {{ $max }})"
     x-init="initGauge()"
+    x-effect="updateGauge()"
     class="relative w-full h-full"
 >
     <svg viewBox="0 0 416 415" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
@@ -125,7 +126,7 @@
                 <path
                     d="M208.063 58.5254L177.885 207.505H238.244L208.063 58.5254L177.885 207.505H238.244L208.063 58.5254Z"
                     fill="white"
-                    transform="rotate({{ ($value - $min) / ($max - $min) * 225 - 112.5 }}, 208, 207.5)"
+                    :transform="'rotate(' + computedRotation + ', 208, 207.5)'"
                 />
             </g>
             <g filter="url(#filter2_d_12028_19359)">
@@ -149,4 +150,24 @@
         </g>
     </svg>
 </div>
+
+<script>
+    function gauge(value, min, max) {
+        return {
+            value,
+            min,
+            max,
+            initGauge() {
+                this.updateGauge();
+            },
+            updateGauge() {
+                // Logic to update the gauge based on this.value, this.min, and this.max
+                // This function will be called whenever the component is initialized or updated
+            },
+            get computedRotation() {
+                return ((this.value - this.min) / (this.max - this.min)) * 225 - 112.5;
+            }
+        };
+    }
+</script>
 
