@@ -74,13 +74,14 @@
                     <div class="relative">
                         <div class="flex items-center justify-between">
                             <select
-                                class="w-full bg-bg-tertiary border border-none text-white font-manrope text-[2rem] leading-[140%] tracking-[-0.011em] font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#c9ab9970] rounded-[14px] py-0 px-2 cursor-pointer"
+                                style="border: none !important; background-color: transparent;"
+                                class="w-full bg-[rgba(42, 42, 42, 1)] !important text-white font-manrope text-[2rem] leading-[140%] tracking-[-0.011em] font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-border-light rounded-[14px] py-0 px-2 cursor-pointer"
                                 wire:model.change="period"
                             >
-                                <option class="bg-[#1c1c1c] border rounded-full" value="1">15 min</option>
-                                <option class="bg-[#1c1c1c]" value="2">1 hour</option>
-                                <option class="bg-[#1c1c1c]" value="3">4 hour</option>
-                                <option class="bg-[#1c1c1c]" value="4">1 day</option>
+                                <option class="bg-[#1c1c1c]" value="1">1 day</option>
+                                <option class="bg-[#1c1c1c]" value="2">4 hour</option>
+                                <option class="bg-[#1c1c1c]" value="3">1 hour</option>
+                                <option class="bg-[#1c1c1c]" value="4">15 min</option>
                             </select>
                             <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.2625 5.5L10 11.6808L15.7375 5.5L17.5 7.40283L10 15.5L2.5 7.40283L4.2625 5.5Z" fill="white"/>
@@ -136,14 +137,3 @@
     </div>
 </section>
 
-<style>
-    select {
-        background-color: transparent !important;
-        border: none !important;
-        appearance: none !important;
-    }
-    select:focus {
-        /* box-shadow: none !important;
-        outline: 1px rgba(255, 255, 255, 0.1) solid !important; */
-    }
-</style>

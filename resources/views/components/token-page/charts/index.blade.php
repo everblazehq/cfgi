@@ -15,6 +15,7 @@
         :period="$period"
         :selectedOptions="$selectedOptions"
         :values="$values"
+        :selectDisabled="false"
     >
 
     <livewire:charts
@@ -77,6 +78,7 @@
         secondaryButtonAction="setTimeframe('custom')"
         canvasRef="canvas"
         chartType="line"
+        selectDisabled="true"
     >
         <livewire:charts
             :data="$data"
