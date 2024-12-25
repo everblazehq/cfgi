@@ -29,8 +29,3 @@
     </defs>
 </svg>
 
-
-<script>
-      console.log('Progress Value:', {{ $value }});
-      console.log('Progress Width:', {{ $progressWidth }});
-  </script>

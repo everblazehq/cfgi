@@ -1,4 +1,4 @@
-@props(['title', 'progress', 'chartData', 'index', 'isBlurred' => false])
+@props(['title', 'progress', 'scoreTimeData', 'index', 'isBlurred' => false])
 <div class="flex flex-col bg-bg-primary border border-border-light rounded-xl p-7 gap-10 w-full">
     <div class="flex flex-col gap-5">
         <div class="flex justify-between items-center">
@@ -12,17 +12,62 @@
             />
         </div>
         <div class="flex justify-center">
-            <x-global.badges.status-badge type="fear" size="sm">36% DOWNTREND MARKET</x-global.badges.status-badge>
+            <x-global.badges.status-badge type="fear" size="sm">{{ $scoreTimeData[0]['score'] }}% DOWNTREND MARKET</x-global.badges.status-badge>
         </div>
     </div>
     <div class="flex flex-col gap-5 relative">
         <div class="{{ $isBlurred ? 'blurred' : '' }}">
-            <div class="w-full overflow-hidden bg-[#1E1E1E] rounded-xl pt-3">
-                <canvas id="cardBarCanvasChart{{ $index }}"></canvas>
-            </div>
-            <div id="cardBarChartLabels{{ $index }}">
-                <!-- Labels will be inserted here -->
-            </div>
+            @if(is_array($scoreTimeData) && !empty($scoreTimeData))
+                <livewire:charts
+                    :data="$scoreTimeData"
+                    dataType="scoreTimeData"
+                    :chartData="[
+                        'labels' => collect($scoreTimeData)->pluck('time')->all(),
+                        'datasets' => [
+                            [
+                                'label' => 'My First Dataset',
+                                'data' => collect($scoreTimeData)->pluck('score')->all(),
+                                'borderWidth' => 0,
+                                'borderRadius' => [
+                                    'topLeft' => 8,
+                                    'topRight' => 8,
+                                ],
+                            ],
+                        ],
+                    ]"
+                    :chartConfig="[
+                        'type' => 'bar',
+                        'options' => [
+                            'responsive' => true,
+                            'maintainAspectRatio' => false,
+                            'plugins' => [
+                                'legend' => [
+                                    'display' => false,
+                                ],
+                            ],
+                            'scales' => [
+                                'x' => [
+                                    'grid' => [
+                                        'display' => false,
+                                    ],
+                                ],
+                                'y' => [
+                                    'grid' => [
+                                        'display' => false,
+                                    ],
+                                    'ticks' => [
+                                        'display' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ]"
+                    chartId="{{ $index }}"
+                    wire:key="{{ $index }}"
+                />
+            @else
+                <p>No data available for chart.</p>
+            @endif
         </div>
         @if($isBlurred)
             <div class="overlay">
