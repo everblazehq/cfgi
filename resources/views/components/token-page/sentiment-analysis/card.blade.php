@@ -8,11 +8,11 @@
         <!--progress bar goes here -->
         <div class="w-full">
             <x-token-page.sentiment-analysis.progress-bar-card
-                :value=$progress
+                :value="$scoreTimeData[0]['score'] ?? 0"
             />
         </div>
         <div class="flex justify-center">
-            <x-global.badges.status-badge type="fear" size="sm">{{ $scoreTimeData[0]['score'] }}% DOWNTREND MARKET</x-global.badges.status-badge>
+            <x-global.badges.status-badge value="{{ $scoreTimeData[0]['score'] }}" type="detailed" size="sm" indicator="{{ explode(' ', $title)[0] }}" />
         </div>
     </div>
     <div class="flex flex-col gap-5 relative">

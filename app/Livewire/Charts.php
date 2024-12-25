@@ -88,29 +88,16 @@ class Charts extends Component
             default:
                 $this->chartData = [];
         }
-        
+
 
         $this->dispatch('updateChartCanvas');
     }
 
     public function getBackgroundColors($dataValues)
     {
-        $colors = [
-            'red' => '#FF004D',
-            'orange' => '#FF540B',
-            'yellow' => '#FFD600',
-            'green' => '#90FF00',
-            'blue' => '#03EBF3',
-            'default' => '#333333'
-        ];
-
-        return array_map(function($value) use ($colors) {
-            if ($value < 20) return $colors['red'];
-            if ($value < 40) return $colors['orange'];
-            if ($value < 60) return $colors['yellow'];
-            if ($value < 80) return $colors['green'];
-            if ($value <= 100) return $colors['blue'];
-            return $colors['default'];
+        return array_map(function($value) {
+            // Use the helper function to get the color based on the value
+            return getFearGreedIndexColor($value);
         }, $dataValues);
     }
 

@@ -1,14 +1,12 @@
 <div class="min-h-screen bg-bg-primary text-text-primary p-2 md:p-8 overflow-x-hidden">
     <header class="mb-8">
-        <h1 class="text-h1 font-bold">{{ getFullCoinName($coin) }}</h1>
+        <h1 class="text-h1 font-bold">{{ ucfirst($coin) }}</h1>
     </header>
-    period: {{ $period }} <br />
-    values: {{ $values }} <br />
+    @if($useTestData)
     @if(!empty($cfgData) && isset($cfgData[0]['cfgi']))
         {{ $cfgData[0]['cfgi'] }}
         {{ json_encode($cfgData, JSON_PRETTY_PRINT) }}
     @endif
-    {{ $count }}
     <div>
         @if(!is_null($timeRemaining))
             <span id="countdownDisplay">{{ gmdate('i:s', $timeRemaining) }}</span>
@@ -17,18 +15,16 @@
         @endif
     </div>
     <!-- resources/views/livewire/parent-component.blade.php -->
-<div >
-    <span id="countdownDisplay">{{ gmdate('i:s', $timeRemaining) }}</span>
-    <div>Countdown: {{ number_format($countdownPercentage, 2) }}%</div>
-</div>
+    <div >
+        <span id="countdownDisplay">{{ gmdate('i:s', $timeRemaining) }}</span>
+        <div>Countdown: {{ number_format($countdownPercentage, 2) }}%</div>
+    </div>
     <div>
         <!-- Button to fetch next data point -->
-        @if($useTestData)
         <button wire:click.prevent="fetchNextDataPoint" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
             Test Button Click
         </button>
-        @endif
-        @if($useTestData)
+
         <div>
             period: {{ $period }} <br />
             @if(!empty($cfgData) && isset($cfgData[0]['cfgi']))
@@ -74,7 +70,7 @@
                                     ];
                                 })->all();
                             @endphp
-                            
+
                             <x-token-page.sentiment-analysis.card
                                 title="{{ $key }} sentiment"
                                 :progress="$countdownPercentage"

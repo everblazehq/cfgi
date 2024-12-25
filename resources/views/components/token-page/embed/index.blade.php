@@ -6,7 +6,7 @@
     lightCode: ''
 }" class="flex flex-col space-between gap-[1.875rem] font-manrope bg-bg-primary border border-border-light rounded-[32px] p-[30px]">
     <div class="flex flex-col gap-[0.375rem]">
-        <h2 class="text-h2-large font-bold mb-[10px]">{{ getFullCoinName($coinName) }} Analysis</h2>
+        <h2 class="text-h2-large font-bold mb-[10px]">{{ ucfirst($coinName) }} Analysis</h2>
         <span class="text-white text-base font-medium">Embed the code on your website with current selected temporality and autoupdated.</span>
     </div>
     <div class="relative w-fit bg-bg-accent border border-border-light rounded-[110px] p-[5px] sm:p-[10px] md:p-[10px]">

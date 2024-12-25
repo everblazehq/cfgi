@@ -8,7 +8,7 @@
     }"
     class="bg-bg-primary border border-border-light rounded-[32px] p-7 space-y-7"
 >
-    <h2 class="text-h2-large font-manrope font-bold">{{ getFullCoinName($coinName) }} Fear and Greed Index Indicator Explained</h2>
+    <h2 class="text-h2-large font-manrope font-bold">{{ ucfirst($coinName) }} Fear and Greed Index Indicator Explained</h2>
     <div class="flex gap-7">
         <!-- Left sidebar with indicators -->
         <div class="w-fit md:w-[213px] flex flex-col bg-bg-secondary border border-[#323232] rounded-[1.25rem] p-[10px] relative">
@@ -24,20 +24,20 @@
         <!-- Right content -->
         <div class="flex-1">
             <div class="flex flex-col text-white text-sm md:text-2xl font-manrope font-normal mb-4 gap-7 p-[10px]">
-                <p x-text="'Content for ' + '{{ getFullCoinName($coinName) }}' + ' ' + activeIndicator + ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'">
+                <p x-text="'Content for ' + '{{ ucfirst($coinName) }}' + ' ' + activeIndicator + ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'">
                 </p>
                 <p>
-                    The {{ getFullCoinName($coinName) }} Fear and Greed Index values range from 0% (extreme fear) to 100% (extreme greed).
+                    The {{ ucfirst($coinName) }} Fear and Greed Index values range from 0% (extreme fear) to 100% (extreme greed).
                 </p>
             </div>
             <div class="flex flex-col gap-[30px] p-[10px]">
                 <p class="text-sm md:text-2xl font-sans font-bold">The values are:</p>
                 <div class="flex flex-col gap-[10px]">
-                    <x-global.badges.status-badge type="extreme-fear" size="base">EXTREME FEAR</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="fear" size="base">FEAR</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="neutral" size="base">NEUTRAL</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="greed" size="base">GREED</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="extreme-greed" size="base">EXTREME GREED</x-global.badges.status-badge>
+                    <x-global.badges.status-badge value="0" type="basic" size="base" />
+                    <x-global.badges.status-badge value="21" type="basic" size="base" />
+                    <x-global.badges.status-badge value="41" type="basic" size="base" />
+                    <x-global.badges.status-badge value="61" type="basic" size="base" />
+                    <x-global.badges.status-badge value="81" type="basic" size="base" />
                 </div>
             </div>
         </div>

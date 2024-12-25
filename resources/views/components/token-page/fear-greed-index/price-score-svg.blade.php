@@ -11,14 +11,7 @@
     $dashOffset = $circumference - ($value / 100) * $circumference;
 
     // Determine the color based on the value
-    $colorClass = match(true) {
-        ($value > 0 && $value < 20) => '#FF004D', // Red
-        $value < 40 => '#FF540B', // Orange
-        $value < 60 => '#FFD600', // Yellow
-        $value < 80 => '#90FF00', // Green
-        $value <= 100 => '#03EBF3', // Blue
-        default => '#212121'  // Edge case for no matching value
-    };
+    $colorClass = getFearGreedIndexColor($value);
 @endphp
 
 <svg width="100%" height="100%" viewBox="0 0 53 52" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scale(-1, 1)">

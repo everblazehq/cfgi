@@ -12,12 +12,8 @@
 ])
 
 <section class="flex flex-col lg:flex-row gap-6 w-full mx-auto">
-<!-- <h1>Token Page</h1>
-    <p>Coin: {{ $coin }}</p>
-    <pre>CFGI Data: {{ isset($cfgData) ? json_encode($cfgData, JSON_PRETTY_PRINT) : 'No data available' }}</pre>
-</div> -->
-{{-- Fear & Greed Index Section --}}
 
+{{-- Fear & Greed Index Section --}}
     <div x-data="fearGreedIndex(@js($cfgData))" class="relative w-full lg:w-[33rem]" role="region" aria-label="Fear and Greed Index">
         {{-- Loading State --}}
         <!-- TODO: Test this -->
@@ -63,7 +59,7 @@
                     <div class="flex items-center gap-2.5">
                         <x-icons.bitcoin />
                         <span class="font-manrope text-[2rem] leading-[140%] tracking-[-0.011em] font-bold">
-                            {{ $coin }}
+                            {{ getTicker($coin) }}
                         </span>
                     </div>
                 </div>
@@ -101,7 +97,7 @@
     >
         <div class="flex justify-between items-center mb-6">
             <h2 class="font-manrope text-h2-medium leading-[110%] tracking-[-0.011em] font-bold text-white">
-                {{ getFullCoinName($coin) }} analysis
+                {{ ucfirst($coin) }} analysis
             </h2>
             <button>
                 <x-icons.arrow />
