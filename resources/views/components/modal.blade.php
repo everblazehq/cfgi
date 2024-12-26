@@ -22,11 +22,11 @@
             </button>
         </div>
 
-        <div class="mt-8 overflow-auto">
+        <div class="mt-8 pb-4 overflow-auto">
             {{ $slot }}
         </div>
 
-        <div class="mt-12 flex items-center justify-end gap-2">
+        <div class="mt-8 flex items-center justify-end gap-2">
             <x-button variant="outline" x-on:click="showModalAddress = false">Discard</x-button>
             <x-button variant="primary" type="submit">Submit</x-button>
         </div>

@@ -30,4 +30,8 @@ Route::get('/signal-historical', function () {
     return view('signal-historical');
 });
 
+Route::get('/notifications', function () {
+    return view('notifications');
+});
+
 Route::get('{coin}-fear-greed-index', TokenPage::class);
