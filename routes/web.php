@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\TokenPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,4 @@ Route::get('/notifications', function () {
     return view('notifications');
 });
 
-Route::get('{coin}-fear-greed-index', function (string $coin) {
-    return view('token-page', ['coin' => $coin]);
-});
+Route::get('{coin}-fear-greed-index', TokenPage::class);
