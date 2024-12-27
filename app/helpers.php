@@ -1,7 +1,7 @@
 <?php
 
-if (!function_exists('getFullCoinName')) {
-    function getFullCoinName($ticker) {
+if (!function_exists('getTicker')) {
+    function getTicker($fullCoinName) {
         $coinMap = [
             'bitcoin' => 'btc',
             'ethereum' => 'eth',
@@ -77,6 +77,17 @@ if (!function_exists('getFullCoinName')) {
             // Add more mappings as needed
         ];
 
-        return $coinMap[$ticker] ?? Str::title($ticker);
+        return $coinMap[$fullCoinName] ?? Str::title($fullCoinName);
+    }
+}
+
+if (!function_exists('getFearGreedIndexColor')) {
+    function getFearGreedIndexColor($value, $opacity = 1) {
+        if ($value >= 0 && $value < 20) return 'rgba(255, 0, 77, ' . $opacity . ')'; // Red (#FF004D)
+        if ($value < 40) return 'rgba(255, 84, 11, ' . $opacity . ')'; // Orange (#FF540B)
+        if ($value < 60) return 'rgba(255, 214, 0, ' . $opacity . ')'; // Yellow (#FFD600)
+        if ($value < 80) return 'rgba(144, 255, 0, ' . $opacity . ')'; // Green (#90FF00)
+        if ($value <= 100) return 'rgba(3, 235, 243, ' . $opacity . ')'; // Blue (#03EBF3)
+        return 'rgba(33, 33, 33, ' . $opacity . ')'; // Edge case (#212121)
     }
 }

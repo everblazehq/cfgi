@@ -1,45 +1,41 @@
 @props(['indicators' => [], 'coinName' => ''])
 
-<section
-    x-data="{
-        activeIndicator: `{{ $indicators[0] }}`,
-        indicators: {{ json_encode($indicators) }},
-        activeIndex: 0
-    }"
-    class="bg-bg-primary border border-border-light rounded-[32px] p-7 space-y-7"
->
-    <h2 class="text-h2-large font-manrope font-bold">{{ getFullCoinName($coinName) }} Fear and Greed Index Indicator Explained</h2>
-    <div class="flex gap-7">
+<section x-data="{
+    indicators: {{ json_encode($indicators) }},
+    activeIndicator: null,
+    activeIndex: 0,
+    init() {
+        if (this.indicators.length > 0) {
+            this.activeIndicator = this.indicators[0];
+        }
+    }
+}" class="bg-bg-primary border border-border-light rounded-[32px] p-7 space-y-7">
+    <h4 class="text-h2-large font-manrope font-bold">{{ ucfirst($coinName) }} Fear and Greed Index Indicator Explained
+    </h4>
+    <div class="flex flex-col sm:flex-row gap-7">
         <!-- Left sidebar with indicators -->
-        <div class="w-fit md:w-[213px] flex flex-col bg-bg-secondary border border-[#323232] rounded-[1.25rem] p-[10px] relative">
-            <template x-for="(indicator, index) in indicators" :key="indicator">
-                <button
-                    class="relative z-10 indicator-button w-full text-left text-sm md:text-xl font-manrope px-3 py-2 md:px-[30px] md:py-[20px] rounded-[0.625rem]"
-                    :class="activeIndicator === indicator ? 'bg-accent-blue text-white font-semibold transition-all duration-700 ease-in-out' : 'text-white/60 font-medium hover:text-white/80'"
-                    @click="activeIndicator = indicator; activeIndex = index"
-                    x-text="indicator">
-                </button>
-            </template>
-        </div>
+        <nav class="w-full md:w-[213px] bg-bg-secondary border border-[#323232] rounded-[1.25rem] p-[10px] relative"
+            aria-label="Indicator Navigation">
+            <ul class="flex sm:flex-col overflow-x-auto whitespace-nowrap">
+                <template x-for="(indicator, index) in indicators" :key="indicator">
+                    <li>
+                        <button
+                            class="relative z-10 indicator-button w-full text-left text-sm md:text-xl font-manrope px-3 py-2 md:px-[30px] md:py-[20px] rounded-[0.625rem]"
+                            :class="activeIndicator === indicator ?
+                                'bg-accent-blue text-white font-semibold transition-all duration-700 ease-in-out' :
+                                'text-white/60 font-medium hover:text-white/80'"
+                            @click="activeIndicator = indicator; activeIndex = index; console.log('Clicked:', indicator, 'Active Indicator:', activeIndicator)"
+                            :aria-controls="'content-' + indicator" :id="'button-' + indicator"
+                            :aria-selected="activeIndicator === indicator ? 'true' : 'false'">
+                            <span x-text="indicator"></span>
+                        </button>
+                    </li>
+                </template>
+            </ul>
+        </nav>
         <!-- Right content -->
         <div class="flex-1">
-            <div class="flex flex-col text-white text-sm md:text-2xl font-manrope font-normal mb-4 gap-7 p-[10px]">
-                <p x-text="'Content for ' + '{{ getFullCoinName($coinName) }}' + ' ' + activeIndicator + ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'">
-                </p>
-                <p>
-                    The {{ getFullCoinName($coinName) }} Fear and Greed Index values range from 0% (extreme fear) to 100% (extreme greed).
-                </p>
-            </div>
-            <div class="flex flex-col gap-[30px] p-[10px]">
-                <p class="text-sm md:text-2xl font-sans font-bold">The values are:</p>
-                <div class="flex flex-col gap-[10px]">
-                    <x-global.badges.status-badge type="extreme-fear" size="base">EXTREME FEAR</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="fear" size="base">FEAR</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="neutral" size="base">NEUTRAL</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="greed" size="base">GREED</x-global.badges.status-badge>
-                    <x-global.badges.status-badge type="extreme-greed" size="base">EXTREME GREED</x-global.badges.status-badge>
-                </div>
-            </div>
+            <x-token-page.explanation.content x-bind:activeIndicator="activeIndicator" :coinName="$coinName" />
         </div>
     </div>
 </section>
